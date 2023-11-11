@@ -10,7 +10,8 @@ module.exports = {
       {
         library,
         noParse: true,
-        engineScope: "@alilc"
+        engineScope: "@alilc",
+        builtinAssets: []
       },
     ],
   ],

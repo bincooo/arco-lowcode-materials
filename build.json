@@ -6,5 +6,12 @@
     "@": "./src",
     "@components": "./src/components"
   },
-  "plugins": [["build-plugin-component"]]
+  "plugins": [
+    [
+      "build-plugin-component",
+      {
+        "themePackage": "@alifd/theme-2"
+      }
+    ]
+  ]
 }

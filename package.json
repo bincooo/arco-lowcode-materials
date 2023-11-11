@@ -79,7 +79,7 @@
     "f2elint": "^1.2.0"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.55.1",
+    "@arco-design/web-react": "^2.55.2",
     "moment": "^2.29.4",
     "@babel/runtime": "^7.0.0"
   },
