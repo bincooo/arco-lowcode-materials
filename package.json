@@ -40,7 +40,8 @@
     "f2elint-fix": "f2elint fix",
     "dumi": "cross-env APP_ROOT=docs dumi dev",
     "dumi:build": "cross-env APP_ROOT=docs dumi build",
-    "prepublishOnly": "npm run build && npm run lowcode:build && npm run dumi:build"
+    "prepublishOnly": "npm run build && npm run lowcode:build && npm run dumi:build",
+    "postinstall": "patch-package"
   },
   "directories": {
     "test": "test"
@@ -50,12 +51,7 @@
   ],
   "author": "fusion-team",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "f2elint commit-file-scan",
-      "commit-msg": "f2elint commit-msg-scan"
-    }
-  },
+
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": "f2elint exec eslint",
     "**/*.{css,scss,less,acss}": "f2elint exec stylelint"
@@ -76,12 +72,13 @@
     "cross-env": "^7.0.3",
     "dumi": "^1.1.49",
     "dumi-theme-default": "^1.1.24",
-    "f2elint": "^1.2.0"
+    "f2elint": "^1.2.0",
+    "patch-package": "^8.0.0"
   },
   "dependencies": {
     "@arco-design/web-react": "^2.55.2",
-    "moment": "^2.29.4",
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "moment": "latest"
   },
   "acceptDependencies": {
     "webpack": "^4.46.x"

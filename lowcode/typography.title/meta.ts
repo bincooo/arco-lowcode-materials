@@ -7,78 +7,73 @@ const componentName: string = "Title"
 const mixedConfig: Record<string, unknown> | IPublicTypeDynamicProps = {
     setters: [
         {
-            // componentName: 'ArraySetter',
-            // props: {
-            //     itemSetter: {
-                    componentName: 'ObjectSetter',
-                    props: {
-                        config: {
-                            items: [
-                                {
-                                    name: 'cssEllipsis',
-                                    title: {
-                                        label: '自动省略',
-                                        tip: 'cssEllipsis | 自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。'
-                                    },
-                                    setter: 'BoolSetter'
-                                },
-                                {
-                                    name: 'defaultExpanded',
-                                    title: '默认展开',
-                                    setter: 'BoolSetter'
-                                },
-                                {
-                                    name: 'expandable',
-                                    title: {
-                                        label: '折叠按钮',
-                                        tip: 'expandable | 显示展开/折叠按钮'
-                                    },
-                                    setter: 'BoolSetter'
-                                },
-                                {
-                                    name: 'expanded',
-                                    title: '是否展开',
-                                    setter: 'BoolSetter'
-                                },
-                                {
-                                    name: 'rows',
-                                    title: '显示省略的行数',
-                                    setter: 'NumberSetter'
-                                },
-                                {
-                                    name: 'ellipsisStr',
-                                    title: '省略号',
-                                    setter: 'StringSetter'
-                                },
-                                {
-                                    name: 'suffix',
-                                    title: '后缀',
-                                    setter: 'StringSetter'
-                                },
-                                {
-                                    name: 'onEllipsis',
-                                    title: {
-                                        label: 'onEllipsis',
-                                        tip: 'onEllipsis | 在省略发生改变的时候触发，通常是窗口resize情况会触发。'
-                                    },
-                                    setter: 'FunctionSetter'
-                                },
-                                {
-                                    name: 'onExpand',
-                                    title: {
-                                        label: 'onExpand',
-                                        tip: 'onExpand | 在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。'
-                                    },
-                                    setter: 'FunctionSetter'
-                                },
-                            ]
-                        }
-                    },
-                    initialValue: {
-                        // title: "Title"
-                    }
-            //     }
-            // }
+            componentName: 'ObjectSetter',
+            props: {
+                config: {
+                    items: [
+                        {
+                            name: 'cssEllipsis',
+                            title: {
+                                label: '自动省略',
+                                tip: 'cssEllipsis | 自动溢出省略（只支持字符串），在大量使用情况下建议开启提高性能。'
+                            },
+                            setter: 'BoolSetter'
+                        },
+                        {
+                            name: 'defaultExpanded',
+                            title: '默认展开',
+                            setter: 'BoolSetter'
+                        },
+                        {
+                            name: 'expandable',
+                            title: {
+                                label: '折叠按钮',
+                                tip: 'expandable | 显示展开/折叠按钮'
+                            },
+                            setter: 'BoolSetter'
+                        },
+                        {
+                            name: 'expanded',
+                            title: '是否展开',
+                            setter: 'BoolSetter'
+                        },
+                        {
+                            name: 'rows',
+                            title: '显示省略的行数',
+                            setter: 'NumberSetter'
+                        },
+                        {
+                            name: 'ellipsisStr',
+                            title: '省略号',
+                            setter: 'StringSetter'
+                        },
+                        {
+                            name: 'suffix',
+                            title: '后缀',
+                            setter: 'StringSetter'
+                        },
+                        {
+                            name: 'onEllipsis',
+                            title: {
+                                label: 'onEllipsis',
+                                tip: 'onEllipsis | 在省略发生改变的时候触发，通常是窗口resize情况会触发。'
+                            },
+                            setter: 'FunctionSetter'
+                        },
+                        {
+                            name: 'onExpand',
+                            title: {
+                                label: 'onExpand',
+                                tip: 'onExpand | 在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。'
+                            },
+                            setter: 'FunctionSetter'
+                        },
+                    ]
+                }
+            },
+            initialValue: {
+                // title: "Title"
+            }
         }
     ]
 }
@@ -89,6 +84,17 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         display: 'block',
         type: 'group',
         items: [
+            {
+                name: 'children',
+                title: {
+                  label: '内容',
+                  tip: 'children | 内容',
+                },
+                setter: [
+                    { componentName: 'StringSetter' },
+                    { componentName: 'SlotSetter' },
+                ],
+            },
             {
                 name: 'bold',
                 title: '粗体',
@@ -242,7 +248,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "链接",
+    title: "标题",
     docUrl: "",
     screenshot: "",
     devMode: "proCode",

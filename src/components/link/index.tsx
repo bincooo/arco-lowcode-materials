@@ -1,9 +1,8 @@
 import { forwardRef, Ref, createElement } from 'react';
 import { Link } from '@arco-design/web-react'
-import { slotCut } from '@/utils'
 
 const IconBox = (props: any, ref: Ref<any>) => {
-    let { status, disabled, style, icon, ...others } = props;
+    let { status, disabled, style, ...others } = props;
     if (status && !disabled) {
         // css被污染了，特殊处理
         let color: string
@@ -23,7 +22,7 @@ const IconBox = (props: any, ref: Ref<any>) => {
             ...style
         }
     }
-    return <Link status={status} disabled={disabled} style={style} icon={slotCut([icon])} ref={ref} {...others} />
+    return <Link status={status} disabled={disabled} style={style} ref={ref} {...others} />
 }
 
 export default forwardRef(IconBox)

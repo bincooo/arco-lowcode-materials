@@ -43,8 +43,8 @@ const Metadata: IPublicTypeComponentMetadata = {
                   template: "\nonClick(event, ${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
                 },
             ],
-            style: true
-        }
+            style: true,
+        },
     }
 };
 const snippets: IPublicTypeSnippet[] = [
@@ -71,7 +71,43 @@ const snippets: IPublicTypeSnippet[] = [
                 children: '我是DIV'
             }
         }
-    }
+    },
+    {
+        title: "ol",
+        screenshot: '',
+        schema: {
+            title: 'ol',
+            componentName,
+            props: {
+                tag: 'ol',
+                children: '我是OL'
+            }
+        }
+    },
+    {
+        title: "ul",
+        screenshot: '',
+        schema: {
+            title: 'ul',
+            componentName,
+            props: {
+                tag: 'ul',
+                children: '我是UL'
+            }
+        }
+    },
+    {
+        title: "li",
+        screenshot: '',
+        schema: {
+            title: 'li',
+            componentName,
+            props: {
+                tag: 'li',
+                children: '我是LI'
+            }
+        }
+    },
 ];
 
 export default {
