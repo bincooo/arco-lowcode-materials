@@ -1,8 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig, IPublicTypeSetterType } from '@alilc/lowcode-types';
-import pack, { baseEvents } from '../pack'
+import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "Row"
-
+const componentTitle: string = "栅格行"
 const objectConfig: IPublicTypeSetterType = {
     componentName: 'ObjectSetter',
     props: {
@@ -29,6 +29,7 @@ const objectConfig: IPublicTypeSetterType = {
 }
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',
@@ -125,7 +126,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "栅格行",
+    title: componentTitle,
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
@@ -163,10 +164,11 @@ const Metadata: IPublicTypeComponentMetadata = {
 
 const snippets: IPublicTypeSnippet[] = [
     {
-        title: "栅格行",
+        title: componentTitle,
         screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
+            title: componentTitle,
             props: {
             }
         }

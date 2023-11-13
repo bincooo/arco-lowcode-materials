@@ -13,6 +13,12 @@ const BasicBox = (props: any, ref: Ref<any>) => {
             ...style
         }
     }
+    if (tag == 'ul') {
+        style = {
+            listStyle: 'disc',
+            ...style
+        }
+    }
     return <Tag ref={ref} style={style} {...others} />
 }
 

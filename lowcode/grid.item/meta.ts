@@ -1,7 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig, IPublicTypeSetterType } from '@alilc/lowcode-types';
-import pack, { baseEvents } from '../pack'
+import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "GridItem"
+const componentTitle: string = "栅格单元"
 
 function clamp(value: number, min: number, max: number) {
     return Math.max(min, Math.min(max, value));
@@ -53,6 +54,7 @@ const objectConfig: IPublicTypeSetterType = {
 }
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',
@@ -96,7 +98,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "栅格单元",
+    title: componentTitle,
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
@@ -168,10 +170,11 @@ const Metadata: IPublicTypeComponentMetadata = {
 
 const snippets: IPublicTypeSnippet[] = [
     {
-        title: "栅格单元",
+        title: componentTitle,
         screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
+            title: componentTitle,
             props: {
                 span: 12
             }

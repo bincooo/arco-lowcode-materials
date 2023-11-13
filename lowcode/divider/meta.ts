@@ -1,8 +1,10 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
-import pack from '../pack'
+import pack, { baseProps } from '../pack'
 
 const componentName: string = "Divider"
+const componentTitle: string = "分割线"
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',
@@ -77,7 +79,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "分割线",
+    title: componentTitle,
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
@@ -93,10 +95,11 @@ const Metadata: IPublicTypeComponentMetadata = {
 
 const snippets: IPublicTypeSnippet[] = [
     {
-        title: "分割线",
+        title: componentTitle,
         screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
+            title: componentTitle,
             props: {
                 children: '分割线'
             }

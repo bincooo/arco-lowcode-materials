@@ -1,9 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "Icon"
-const componentTitle: string = "图标"
-
+const componentName: string = "CardMeta"
+const componentTitle: string = "卡脚"
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -12,19 +11,35 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
-                name: 'tag',
-                title: '标签名称',
+                name: 'avatar',
+                title: {
+                  label: '头像',
+                  tip: 'avatar | 头像',
+                },
+                setter: { componentName: 'SlotSetter' },
+            },
+            {
+                name: 'description',
+                title: {
+                  label: '描述',
+                  tip: 'description | 描述',
+                },
                 setter: [
                     { componentName: 'StringSetter' },
+                    { componentName: 'SlotSetter' },
                 ],
             },
             {
-                name: 'spin',
-                title: '旋转状态',
+                name: 'title',
+                title: {
+                  label: '标题',
+                  tip: 'title | 标题',
+                },
                 setter: [
-                    { componentName: 'BoolSetter' }
-                ]
-            }
+                    { componentName: 'StringSetter' },
+                    { componentName: 'SlotSetter' },
+                ],
+            },
         ]
     }
 ];
@@ -32,11 +47,11 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
     title: componentTitle,
-    docUrl: "",
+    docUrl: '',
     screenshot: "",
     devMode: "proCode",
-    npm: pack(componentName),
-    category: '通用',
+    npm: pack("Card", "Meta"),
+    category: '数据显示',
     group: 'arco组件',
     props: [
     ],
@@ -44,21 +59,24 @@ const Metadata: IPublicTypeComponentMetadata = {
         props: fieldConfig,
         supports: {
             events: baseEvents,
-            style: true
+            style: true,
+        },
+        component: {
+            isContainer: true,
         }
     }
 };
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: require('./__screenshots__/icon.png'),
+        screenshot: '',
         schema: {
             componentName,
             title: componentTitle,
             props: {
             }
         }
-    }
+    },
 ];
 
 export default {

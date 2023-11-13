@@ -1,8 +1,9 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
-import pack, { baseEvents } from '../pack'
+import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "Button"
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',
@@ -293,6 +294,7 @@ const snippets: IPublicTypeSnippet[] = [
         screenshot: require('./__screenshots__/b1.png'),
         schema: {
             componentName,
+            title: '主要按钮',
             props: {
                 type: 'primary',
                 children: 'primary'
@@ -304,6 +306,7 @@ const snippets: IPublicTypeSnippet[] = [
         screenshot: require('./__screenshots__/b2.png'),
         schema: {
             componentName,
+            title: '次级按钮',
             props: {
                 type: 'secondary',
                 children: 'secondary'
@@ -315,6 +318,7 @@ const snippets: IPublicTypeSnippet[] = [
         screenshot: require('./__screenshots__/b3.png'),
         schema: {
             componentName,
+            title: '虚框按钮',
             props: {
                 type: 'dashed',
                 children: 'dashed'
@@ -326,6 +330,7 @@ const snippets: IPublicTypeSnippet[] = [
         screenshot: require('./__screenshots__/b4.png'),
         schema: {
             componentName,
+            title: '文字按钮',
             props: {
                 type: 'text',
                 children: 'text'
@@ -337,6 +342,7 @@ const snippets: IPublicTypeSnippet[] = [
         screenshot: require('./__screenshots__/b5.png'),
         schema: {
             componentName,
+            title: '线性按钮',
             props: {
                 type: 'outline',
                 children: 'outline'

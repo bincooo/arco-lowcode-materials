@@ -1,36 +1,38 @@
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
-import pack from '../pack'
+import { IPublicTypeComponentMetadata, IPublicTypeSnippet } from '@alilc/lowcode-types';
+import pack, { baseProps } from '../pack'
 
-const componentName: string = "Group"
-
+const componentName: string = "ButtonGroup"
+const componentTitle: string = "组合按钮"
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "组合按钮",
+    title: componentTitle,
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
-    npm: pack("Button", componentName),
+    npm: pack("Button", "Group"),
     category: '通用',
     group: 'arco组件',
     props: [
+
     ],
     configure: {
-        props: [],
+        props: [ baseProps ],
         supports: {},
         component: {
             isContainer: true,
             nestingRule: {
-                childWhitelist: [ 'Button' ]
+                childWhitelist: [ "Button" ]
             }
         }
     }
 };
 const snippets: IPublicTypeSnippet[] = [
     {
-        title: "组合按钮",
+        title: componentTitle,
         screenshot: require('./__screenshots__/group.png'),
         schema: {
             componentName,
+            title: componentTitle,
             props: { }
         }
     }

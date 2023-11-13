@@ -1,9 +1,11 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig, IPublicTypeDynamicProps } from '@alilc/lowcode-types';
-import pack from '../pack'
+import pack, { baseProps } from '../pack'
 
 const componentName: string = "Text"
+const componentTitle: string = "文本"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',
@@ -124,7 +126,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
-    title: "文本",
+    title: componentTitle,
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
@@ -143,10 +145,11 @@ const Metadata: IPublicTypeComponentMetadata = {
 
 const snippets: IPublicTypeSnippet[] = [
     {
-        title: "文本",
+        title: componentTitle,
         screenshot: '',
         schema: {
             componentName,
+            title: componentTitle,
             props: {
                 children: '我是文本'
             }

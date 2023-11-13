@@ -1,8 +1,9 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
-import pack, { baseEvents } from '../pack'
+import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "Basic"
 const fieldConfig: IPublicTypeFieldConfig[] = [
+    baseProps,
     {
         title: '功能',
         display: 'block',

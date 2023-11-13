@@ -1,9 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "Icon"
-const componentTitle: string = "图标"
-
+const componentName: string = "CardGrid"
+const componentTitle: string = "内嵌网格卡片"
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -12,19 +11,13 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
-                name: 'tag',
-                title: '标签名称',
-                setter: [
-                    { componentName: 'StringSetter' },
-                ],
+                name: 'hoverable',
+                title: {
+                  label: '悬浮',
+                  tip: 'hoverable | 是否可以悬浮',
+                },
+                setter: { componentName: 'BoolSetter' },
             },
-            {
-                name: 'spin',
-                title: '旋转状态',
-                setter: [
-                    { componentName: 'BoolSetter' }
-                ]
-            }
         ]
     }
 ];
@@ -32,11 +25,11 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
     title: componentTitle,
-    docUrl: "",
+    docUrl: '',
     screenshot: "",
     devMode: "proCode",
-    npm: pack(componentName),
-    category: '通用',
+    npm: pack("Card", "Grid"),
+    category: '数据显示',
     group: 'arco组件',
     props: [
     ],
@@ -44,21 +37,27 @@ const Metadata: IPublicTypeComponentMetadata = {
         props: fieldConfig,
         supports: {
             events: baseEvents,
-            style: true
+            style: true,
+        },
+        component: {
+            isContainer: true,
+            nestingRule: {
+                childWhitelist: [ "Card" ]
+            }
         }
     }
 };
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: require('./__screenshots__/icon.png'),
+        screenshot: '',
         schema: {
             componentName,
             title: componentTitle,
             props: {
             }
         }
-    }
+    },
 ];
 
 export default {
