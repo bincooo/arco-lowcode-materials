@@ -101,23 +101,23 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     { componentName: 'NumberSetter' },
                     { componentName: 'SlotSetter' }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: 'offset',
+        title: {
+            label: '位置偏移(最多两项，代表xy轴)',
+            tip: 'offset | 设置徽标位置的偏移(最多两项，代表xy轴)',
+        },
+        setter: [
             {
-                name: 'offset',
-                title: {
-                    label: '位置偏移(最多两项，代表xy轴)',
-                    tip: 'offset | 设置徽标位置的偏移(最多两项，代表xy轴)',
-                },
-                setter: [
-                    {
-                        componentName: 'ArraySetter',
-                        props: {
-                            itemSetter: {
-                                componentName: 'NumberSetter'
-                            }
-                        },
+                componentName: 'ArraySetter',
+                props: {
+                    itemSetter: {
+                        componentName: 'NumberSetter'
                     }
-                ]
+                },
             }
         ]
     }

@@ -19,6 +19,36 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     { componentName: 'StringSetter' },
                     { componentName: 'SlotSetter' },
                 ],
+                condition: (curr) => {
+                    const { tag } = curr.node?.schema?.props ?? {}
+                    if (tag == 'img') {
+                        return false
+                    }
+                    return true
+                }
+            },
+            {
+                name: 'attr',
+                title: {
+                    label: '标签属性',
+                    tip: 'attr | 标签属性',
+                },
+                setter: {
+                    componentName: 'ArraySetter',
+                    props: {
+                        itemSetter: {
+                            componentName: 'ObjectSetter',
+                            props: {
+                                config: {
+                                    items: [
+                                        { name: 'key', title: 'key', setter: 'StringSetter' },
+                                        { name: 'value', title: 'value', setter: [ 'StringSetter', 'JsonSetter' ] },
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
             }
         ]
     }
@@ -101,6 +131,27 @@ const snippets: IPublicTypeSnippet[] = [
             props: {
                 tag: 'li',
                 children: '我是LI'
+            }
+        }
+    },
+    {
+        title: "img",
+        screenshot: '',
+        schema: {
+            title: 'img',
+            componentName,
+            props: {
+                tag: 'img',
+                attr: [
+                    {
+                        key: 'src',
+                        value: '//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp'
+                    },
+                    {
+                        key: 'width',
+                        value: '200px'
+                    }
+                ]
             }
         }
     },

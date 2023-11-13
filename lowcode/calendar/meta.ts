@@ -109,23 +109,6 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ]
             },
             {
-                name: 'panelOperations',
-                title: {
-                    label: '配置操作按钮',
-                    tip: "panelOperations | 卡片模式下配置操作按钮 'left' | 'double-left' | 'right' | 'double-right'",
-                },
-                setter: [
-                    {
-                        componentName: 'ArraySetter',
-                        props: {
-                            itemSetter: {
-                                componentName: 'StringSetter'
-                            }
-                        }
-                    }
-                ]
-            },
-            {
                 name: 'dayStartOfWeek',
                 title: {
                     label: '每周起始',
@@ -205,7 +188,24 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 setter: { componentName: 'FunctionSetter' }
             },
         ]
-    }
+    },
+    {
+        name: 'panelOperations',
+        title: {
+            label: '配置操作按钮',
+            tip: "panelOperations | 卡片模式下配置操作按钮 'left' | 'double-left' | 'right' | 'double-right'",
+        },
+        setter: [
+            {
+                componentName: 'ArraySetter',
+                props: {
+                    itemSetter: {
+                        componentName: 'StringSetter'
+                    }
+                }
+            }
+        ]
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {

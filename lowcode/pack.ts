@@ -13,7 +13,7 @@ export default function(componentName: string, subName: string = ''): IPublicTyp
 export const baseEvents = [
     {
         name: 'onClick',
-        template: "\nonClick(event, ${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
+        template: "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
     },
 ]
 
