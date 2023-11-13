@@ -1,5 +1,5 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
-import pack from '../pack'
+import pack, { baseEvents } from '../pack'
 
 const componentName: string = "Button"
 const fieldConfig: IPublicTypeFieldConfig[] = [
@@ -282,12 +282,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     configure: {
         props: fieldConfig,
         supports: {
-            events: [
-                {
-                  name: 'onClick',
-                  template: "\nonClick(event, ${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
-                },
-            ],
+            events: baseEvents,
             style: true
         }
     }

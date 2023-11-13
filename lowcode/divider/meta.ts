@@ -87,16 +87,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     props: [
     ],
     configure: {
-        props: fieldConfig,
-        supports: {
-            events: [
-                {
-                  name: 'onClick',
-                  template: "\nonClick(event, ${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
-                },
-            ],
-            style: true
-        }
+        props: fieldConfig
     }
 };
 
