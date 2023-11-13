@@ -9,3 +9,10 @@ export default function(componentName: string, subName: string = ''): IPublicTyp
         subName
     };
 };
+
+export const baseEvents = [
+    {
+        name: 'onClick',
+        template: "\nonClick(event, ${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
+    },
+]

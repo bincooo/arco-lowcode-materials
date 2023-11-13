@@ -11,7 +11,8 @@ module.exports = {
         library,
         noParse: true,
         engineScope: "@alilc",
-        builtinAssets: []
+        builtinAssets: [
+        ]
       },
     ],
   ],

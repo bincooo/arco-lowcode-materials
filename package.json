@@ -51,7 +51,6 @@
   ],
   "author": "fusion-team",
   "license": "MIT",
-
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": "f2elint exec eslint",
     "**/*.{css,scss,less,acss}": "f2elint exec stylelint"
