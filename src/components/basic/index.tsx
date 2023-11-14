@@ -30,7 +30,7 @@ function arr2Obj(arr: any[]) {
     let obj = {}
     for (const index in arr) {
         const item = arr[index]
-        if (item.key && item.value) {
+        if (item?.key && item?.value) {
             obj[item.key] = item.value
         }
     }

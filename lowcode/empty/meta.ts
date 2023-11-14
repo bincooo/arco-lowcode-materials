@@ -1,8 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "CardMeta"
-const componentTitle: string = "卡片描述"
+const componentName: string = "Empty"
+const componentTitle: string = "空状态"
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -11,37 +11,36 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
-                name: 'avatar',
+                name: 'icon',
                 title: {
-                  label: '头像',
-                  tip: 'avatar | 头像',
+                    label: '显示图案',
+                    tip: 'icon | 自定义显示图案'
                 },
-                setter: { componentName: 'SlotSetter' },
+                setter: [
+                    { componentName: 'SlotSetter' },
+                ]
+            },
+            {
+                name: 'imgSrc',
+                title: {
+                    label: '图片图标',
+                    tip: 'imgSrc | 将图标替换为图片',
+                },
+                setter: { componentName: 'StringSetter' }
             },
             {
                 name: 'description',
                 title: {
-                  label: '描述',
-                  tip: 'description | 描述',
+                    label: '显示文案',
+                    tip: 'description | 显示文案'
                 },
                 setter: [
                     { componentName: 'StringSetter' },
                     { componentName: 'SlotSetter' },
-                ],
-            },
-            {
-                name: 'title',
-                title: {
-                  label: '标题',
-                  tip: 'title | 标题',
-                },
-                setter: [
-                    { componentName: 'StringSetter' },
-                    { componentName: 'SlotSetter' },
-                ],
+                ]
             },
         ]
-    }
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {
@@ -50,7 +49,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     docUrl: '',
     screenshot: "",
     devMode: "proCode",
-    npm: pack("CardMeta"),
+    npm: pack(componentName),
     category: '数据显示',
     group: 'arco组件',
     props: [
@@ -60,18 +59,6 @@ const Metadata: IPublicTypeComponentMetadata = {
         supports: {
             events: baseEvents,
             style: true,
-        },
-        component: {
-            nestingRule: {
-                parentWhitelist: (target: any, self: any) => {
-                    if (target.componentName == 'Card' || (
-                        target.componentName == 'Slot' && target.parent.componentName == 'Card'
-                    )) {
-                        return true
-                    }
-                    return false
-                }
-            }
         },
     }
 };
@@ -83,7 +70,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             title: componentTitle,
             props: {
-            }
+            },
         }
     },
 ];

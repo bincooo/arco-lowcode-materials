@@ -13,12 +13,13 @@ export default function(componentName: string, subName: string = ''): IPublicTyp
 export const baseEvents = [
     {
         name: 'onClick',
+        description: '默认点击事件',
         template: "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
     },
 ]
 
 export const baseProps: IPublicTypeFieldConfig = {
-    title: '基础',
+    title: '通用',
     display: 'block',
     type: 'group',
     items: [

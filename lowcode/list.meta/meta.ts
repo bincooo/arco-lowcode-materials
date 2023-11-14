@@ -1,8 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "CardMeta"
-const componentTitle: string = "卡片描述"
+const componentName: string = "ListMeta"
+const componentTitle: string = "列表子组件单元"
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -13,16 +13,18 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
             {
                 name: 'avatar',
                 title: {
-                  label: '头像',
-                  tip: 'avatar | 头像',
+                  label: '图标',
+                  tip: 'avatar | 列表元素的图标',
                 },
-                setter: { componentName: 'SlotSetter' },
+                setter: [
+                    { componentName: 'SlotSetter' },
+                ],
             },
             {
                 name: 'description',
                 title: {
-                  label: '描述',
-                  tip: 'description | 描述',
+                  label: '元素描述',
+                  tip: 'description | 列表元素描述内容',
                 },
                 setter: [
                     { componentName: 'StringSetter' },
@@ -32,8 +34,8 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
             {
                 name: 'title',
                 title: {
-                  label: '标题',
-                  tip: 'title | 标题',
+                  label: '元素标题',
+                  tip: 'title | 列表元素标题',
                 },
                 setter: [
                     { componentName: 'StringSetter' },
@@ -41,7 +43,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ],
             },
         ]
-    }
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {
@@ -50,7 +52,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     docUrl: '',
     screenshot: "",
     devMode: "proCode",
-    npm: pack("CardMeta"),
+    npm: pack("List", "Item"),
     category: '数据显示',
     group: 'arco组件',
     props: [
@@ -62,17 +64,8 @@ const Metadata: IPublicTypeComponentMetadata = {
             style: true,
         },
         component: {
-            nestingRule: {
-                parentWhitelist: (target: any, self: any) => {
-                    if (target.componentName == 'Card' || (
-                        target.componentName == 'Slot' && target.parent.componentName == 'Card'
-                    )) {
-                        return true
-                    }
-                    return false
-                }
-            }
-        },
+            isContainer: true
+        }
     }
 };
 const snippets: IPublicTypeSnippet[] = [
@@ -83,7 +76,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             title: componentTitle,
             props: {
-            }
+            },
         }
     },
 ];

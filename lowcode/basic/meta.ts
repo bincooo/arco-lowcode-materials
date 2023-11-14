@@ -16,7 +16,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                   tip: 'children | 内容',
                 },
                 setter: [
-                    { componentName: 'StringSetter' },
+                    { componentName: 'StringSetter', condition: () => true },
                     { componentName: 'SlotSetter' },
                 ],
                 condition: (curr) => {
@@ -41,7 +41,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                             props: {
                                 config: {
                                     items: [
-                                        { name: 'key', title: 'key', setter: 'StringSetter' },
+                                        { name: 'key', title: 'key', setter: 'StringSetter', condition: () => true },
                                         { name: 'value', title: 'value', setter: [ 'StringSetter', 'JsonSetter' ] },
                                     ]
                                 }
@@ -82,7 +82,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             props: {
                 tag: 'text',
-                children: '我是文本'
+                children: '我是文本内容'
             }
         }
     },
@@ -94,7 +94,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             props: {
                 tag: 'div',
-                children: '我是DIV'
+                children: '我是DIV标签'
             }
         }
     },
@@ -106,7 +106,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             props: {
                 tag: 'ol',
-                children: '我是OL'
+                children: '我是OL标签'
             }
         }
     },
@@ -118,7 +118,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             props: {
                 tag: 'ul',
-                children: '我是UL'
+                children: '我是UL标签'
             }
         }
     },
@@ -130,7 +130,19 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             props: {
                 tag: 'li',
-                children: '我是LI'
+                children: '我是LI标签'
+            }
+        }
+    },
+    {
+        title: "p",
+        screenshot: '',
+        schema: {
+            title: 'p',
+            componentName,
+            props: {
+                tag: 'p',
+                children: '我是P标签'
             }
         }
     },

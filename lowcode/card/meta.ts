@@ -103,21 +103,6 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ]
             },
             {
-                name: 'actions',
-                title: {
-                    label: '卡片标题',
-                    tip: 'actions | 卡片标题',
-                },
-                setter: [
-                    {
-                        componentName: 'ArraySetter',
-                        props: {
-                            itemSetter: { componentName: 'SlotSetter' }
-                        }
-                    }
-                ]
-            },
-            {
                 name: 'bodyStyle',
                 title: {
                     label: '内容区域样式',
@@ -138,7 +123,22 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ]
             }
         ]
-    }
+    },
+    {
+        name: 'actions',
+        title: {
+            label: '底部的操作组',
+            tip: 'actions | 卡片底部的操作组',
+        },
+        setter: [
+            {
+                componentName: 'ArraySetter',
+                props: {
+                    itemSetter: { componentName: 'SlotSetter' }
+                }
+            }
+        ]
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {
@@ -169,8 +169,8 @@ const snippets: IPublicTypeSnippet[] = [
             title: componentTitle,
             props: {
                 title: '标题',
-                children: '我是卡片',
-                className: 'arco-card-contain-grid'
+                children: "Tips：若使用内嵌网格卡片排版，需要手工添加class: `arco-card-contain-grid`，否则样式无法并排！",
+                // className: 'arco-card-contain-grid'
             }
         }
     },
