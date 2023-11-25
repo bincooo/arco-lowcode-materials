@@ -5,6 +5,8 @@ export { default as Carousel } from './components/carousel'
 export { default as CardMeta } from './components/card.meta'
 export { default as List } from './components/list'
 export { default as Popover } from './components/popover'
+export { default as Statistic } from './components/statistic'
+export { default as Table } from './components/table'
 export {
     Button,
     Typography,
@@ -23,5 +25,4 @@ export {
 
     Modal,
 } from '@arco-design/web-react'
-
 import '@arco-design/web-react/dist/css/index.less'

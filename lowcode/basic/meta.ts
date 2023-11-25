@@ -26,31 +26,31 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     }
                     return true
                 }
-            },
-            {
-                name: 'attr',
-                title: {
-                    label: '标签属性',
-                    tip: 'attr | 标签属性',
-                },
-                setter: {
-                    componentName: 'ArraySetter',
+            }
+        ],
+    },
+    {
+        name: 'attr',
+        title: {
+            label: '标签属性',
+            tip: 'attr | 标签属性',
+        },
+        setter: {
+            componentName: 'ArraySetter',
+            props: {
+                itemSetter: {
+                    componentName: 'ObjectSetter',
                     props: {
-                        itemSetter: {
-                            componentName: 'ObjectSetter',
-                            props: {
-                                config: {
-                                    items: [
-                                        { name: 'key', title: 'key', setter: 'StringSetter', condition: () => true },
-                                        { name: 'value', title: 'value', setter: [ 'StringSetter', 'JsonSetter' ] },
-                                    ]
-                                }
-                            }
+                        config: {
+                            items: [
+                                { name: 'key', title: 'key', setter: 'StringSetter', condition: () => true },
+                                { name: 'value', title: 'value', setter: [ 'StringSetter', 'JsonSetter' ] },
+                            ]
                         }
                     }
                 }
             }
-        ]
+        }
     }
 ];
 

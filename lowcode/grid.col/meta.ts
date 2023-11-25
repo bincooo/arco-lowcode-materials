@@ -297,11 +297,14 @@ const Metadata: IPublicTypeComponentMetadata = {
             style: true
         },
         component: {
-            isContainer: true
+            isContainer: true,
+            nestingRule: {
+                parentWhitelist: [ 'Row' ]
+            }
         },
         advanced: {
             getResizingHandlers: (_: any) => {
-              return ['e'];
+              return ['e'] as any
             },
             callbacks: {
               onResizeStart: (e, currentNode) => {
@@ -345,7 +348,7 @@ const Metadata: IPublicTypeComponentMetadata = {
                 currentNode.setPropValue('span', currentNode.targetColumn);
               },
             },
-        } as any,
+        },
     }
 };
 

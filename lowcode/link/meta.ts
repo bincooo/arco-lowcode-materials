@@ -12,6 +12,17 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
+                name: 'children',
+                title: {
+                    label: '内容',
+                    tip: 'children | 内容',
+                },
+                setter: [
+                    { componentName: 'StringSetter' },
+                    { componentName: 'SlotSetter' },
+                ],
+            },
+            {
                 name: 'href',
                 title: '链接',
                 setter: [

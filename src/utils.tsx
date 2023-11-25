@@ -5,45 +5,68 @@ function isEditor(props: any) {
 }
 
 function isEmptyChild(children: any[]) {
-    return (() => {
-        if (!children || children.length == 0) {
-            return true
-        }
-        if (children.length == 1) {
-            const child = children[0]
-            return (child.type == 'div' && child.props?.className == 'lc-container-placeholder')
-        }
-        return false
-    })()
+    if (!children || children.length == 0) {
+        return true
+    }
+    if (children.length == 1) {
+        const child = children[0]
+        return (child.type == 'div' && child.props?.className == 'lc-container-placeholder')
+    }
+    return false
 }
-  
+
+function isSlot(obj: any) {
+    if (obj.type?.displayName == 'Slot') {
+        return true
+    }
+    return false
+}
+
+// 特殊情况无法选中，或者没有宽高时可以试试这样
+function withWarp(
+    Comp: ComponentType<any>,
+    props: any,
+    ref: Ref<any>,
+    inline: boolean = true
+  ) {
+    let { children, ...others } = props
+    if (isEditor(props)) {
+        return <div  ref={ref} style={ inline ? { display: 'inline-block' } : {}}>
+            <Comp children={children} {...others} />
+        </div>
+    }
+
+    return <Comp ref={ref} {...others} />
+}
+
+// 用于组件只能接收一个children内容的适配处理
 function withSingleChild(
     Comp: ComponentType<any>,
     props: any,
-    ref: Ref<any>
+    ref: Ref<any>,
+    inline: boolean = true
   ) {
-    const { children, ...others } = props
+    let { children, ...others } = props
     if (isEditor(props)) {
         if (isEmptyChild(children)) {
-            return <div ref={ref} {...props} style={{width: '200px'}}/>
+            return <div ref={ref} {...props} />
         }
-        return <div style={{display: 'inline-block'}} ref={ref}>
-            <Comp
-                children={<span children={children} />}
-                {...others}
-            />
+
+        return <div  ref={ref} style={inline ? { display: 'inline-block' } : {}}>
+            <Comp children={<span children={children} />} {...others} />
         </div>
     }
 
     if (isEmptyChild(children)) {
         return <span />
     }
-    console.log('123123131231312', props)
     return <Comp ref={ref} {...others} children={<span children={children} />} />
 }
 
 export {
     isEditor,
     isEmptyChild,
+    isSlot,
+    withWarp,
     withSingleChild
 }

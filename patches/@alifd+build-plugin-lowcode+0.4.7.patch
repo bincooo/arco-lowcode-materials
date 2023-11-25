@@ -1,9 +1,18 @@
 diff --git a/node_modules/@alifd/build-plugin-lowcode/src/constants.js b/node_modules/@alifd/build-plugin-lowcode/src/constants.js
-index 40895e4..99602fc 100644
+index 40895e4..0e9996a 100644
 --- a/node_modules/@alifd/build-plugin-lowcode/src/constants.js
 +++ b/node_modules/@alifd/build-plugin-lowcode/src/constants.js
-@@ -51,7 +51,7 @@ const STATIC_RESOURCES = {
-   engineCoreJsUrl: 'https://dev.g.alicdn.com/ali-lowcode/ali-lowcode-engine/0.16.6/engine-core.js',
+@@ -44,14 +44,14 @@ const STATIC_RESOURCES = {
+   themeStyleUrl:
+     'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-dark@0.6.1/dist/next.var.min.css',
+   engineCoreCssUrl:
+-    'https://dev.g.alicdn.com/ali-lowcode/ali-lowcode-engine/0.16.6/engine-core.css',
++    'https://dev.g.alicdn.com/ali-lowcode/ali-lowcode-engine/1.2.2/engine-core.css',
+   enginePresetCssUrl:
+     'https://alifd.alicdn.com/npm/@alifd/lowcode-preset-plugin@1.1.8/dist/editor-preset-plugin.css',
+   engineExtCssUrl: 'https://g.alicdn.com/ali-lowcode/lowcode-engine-ext/1.0.20/engine-ext.css',
+-  engineCoreJsUrl: 'https://dev.g.alicdn.com/ali-lowcode/ali-lowcode-engine/0.16.6/engine-core.js',
++  engineCoreJsUrl: 'https://dev.g.alicdn.com/ali-lowcode/ali-lowcode-engine/1.2.2/engine-core.js',
    engineExtJsUrl: 'https://g.alicdn.com/ali-lowcode/lowcode-engine-ext/1.0.20/engine-ext.js',
    enginePresetJsUrl:
 -    'https://alifd.alicdn.com/npm/@alifd/lowcode-preset-plugin@1.1.8/dist/editor-preset-plugin.js',
@@ -11,7 +20,19 @@ index 40895e4..99602fc 100644
    raxRenderJsUrl: 'https://alifd.alicdn.com/npm/@alilc/lowcode-rax-renderer@1.0.18/dist/index.umd.js',
    raxRenderCssUrl: 'https://alifd.alicdn.com/npm/@alilc/lowcode-rax-renderer@1.0.18/dist/index.css',
  };
-@@ -71,7 +71,7 @@ const ALILC_STATIC_RESOURCES = {
+@@ -61,17 +61,17 @@ const ALILC_STATIC_RESOURCES = {
+   themeStyleUrl:
+     'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-light@0.2.1/dist/next.var.min.css',
+   engineCoreCssUrl:
+-    'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine/1.1.7-beta.11/dist/css/engine-core.css',
++    'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine/1.2.2/dist/css/engine-core.css',
+   engineExtCssUrl:
+     'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine-ext/1.0.6-beta.25/dist/css/engine-ext.css',
+   enginePresetCssUrl:
+     'https://alifd.alicdn.com/npm/@alilc/lowcode-preset-plugin@0.1.2/dist/lowcode-preset-plugin.css',
+   engineCoreJsUrl:
+-    'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine/1.1.7-beta.11/dist/js/engine-core.js',
++    'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine/1.2.2/dist/js/engine-core.js',
    engineExtJsUrl:
      'https://uipaas-assets.com/prod/npm/@alilc/lowcode-engine-ext/1.0.6-beta.25/dist/js/engine-ext.js',
    enginePresetJsUrl:

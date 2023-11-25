@@ -19,7 +19,7 @@ const BasicBox = (props: any, ref: Ref<any>) => {
             ...style
         }
     }
-    if (tag == 'img') {
+    if (['img'].includes(tag)) {
         children = undefined
     }
 

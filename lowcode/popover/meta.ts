@@ -3,6 +3,7 @@ import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "Popover"
 const componentTitle: string = "气泡卡片"
+
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -188,7 +189,46 @@ const Metadata: IPublicTypeComponentMetadata = {
             style: true,
         },
         component: {
-            isContainer: true
+            isContainer: true,
+            actions: [
+                {
+                    name: '关闭气泡',
+                    content: {
+                        icon: 'arrow-down',
+                        title: '关闭气泡',
+                        action: (curr: any) => {
+                            const popupVisible = curr.getDOMNode()?._pv ?? false
+                            curr.setPropValue('popupVisible', popupVisible)
+                            delete curr.getDOMNode()._pv
+                        }
+                    },
+                    condition: (curr) => {
+                        const popupVisible = curr.getDOMNode()?._pv
+                        if (popupVisible) {
+                            setTimeout(() => {
+                                const mediums = document.querySelectorAll('.lc-simulator .lc-borders-actions .next-medium')
+                                mediums?.forEach(item => {
+                                    // 图标变大... 只能这样删除
+                                    item.classList.remove('next-medium')
+                                })
+                            }, 10)
+                            return true
+                        }
+                        return false
+                    }
+                }
+            ],
+        },
+        advanced: {
+            callbacks: {
+                onSelectHook: (curr: any) => {
+                    if (curr.getDOMNode() && !curr.getDOMNode()?._pv) {
+                        curr.getDOMNode()._pv = curr.getPropValue('popupVisible')
+                        curr.setPropValue('popupVisible', true)
+                    }
+                    return true
+                }
+            },
         }
     }
 };
@@ -200,6 +240,12 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             title: componentTitle,
             props: {
+                title: "标题",
+                content: {
+                    type: "JSSlot",
+                    value: [
+                    ]
+                }
             },
         }
     },

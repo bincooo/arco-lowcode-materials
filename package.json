@@ -5,6 +5,7 @@
   "description": "arco-lowcode-materials",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "lowcodeEditMain": "build/lowcode/view.js",
   "exports": {
     "./*": "./*",
     ".": {
