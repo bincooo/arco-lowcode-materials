@@ -36,7 +36,7 @@ function withWarp(
         </div>
     }
 
-    return <Comp ref={ref} {...others} />
+    return <Comp ref={ref} {...others} children={children} />
 }
 
 // 用于组件只能接收一个children内容的适配处理

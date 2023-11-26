@@ -1,16 +1,17 @@
-import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
+import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig, IPublicTypeDynamicSetter } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "Table"
 const componentTitle: string = "基础表格"
 
 
-function createColumnsProps(mode?: string) {
+function createColumnsProps(mode?: string): IPublicTypeDynamicSetter {
     const uuid = () => {
         const str = "1ab8cd2efg9hi3jklm4opq5rst0uv6wxyz7"
         let result = ""
         for (let index = 0; index < 5; index++) {
-            result += str[index]
+            const idx = Math.round(Math.random() * str.length)
+            result += str[idx]
         }
         return result
     }
@@ -151,6 +152,22 @@ function createColumnsProps(mode?: string) {
                                     ],
                                 },
                                 {
+                                    name: 'filterDropdown',
+                                    title: '自定义筛选框',
+                                    propType: 'func',
+                                    setter: [
+                                        {
+                                          componentName: 'SlotSetter',
+                                          title: '单元格插槽',
+                                          initialValue: {
+                                            type: 'JSSlot',
+                                            params: ['option'],
+                                            value: [],
+                                          },
+                                        },
+                                    ],
+                                },
+                                {
                                     name: 'render',
                                     title: '自定义单元格显示的内容',
                                     propType: 'func',
@@ -164,7 +181,7 @@ function createColumnsProps(mode?: string) {
                                             value: [],
                                           },
                                         },
-                                      ],
+                                    ],
                                 },
                                 {
                                     name: 'children',
@@ -196,9 +213,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     label: '列数据对象的数组',
                     tip: 'columns | 列描述数据对象的数组'
                 },
-                setter: [
-                    createColumnsProps()
-                ],
+                setter: createColumnsProps(),
             },
             {
                 name: 'data',

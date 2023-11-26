@@ -7,6 +7,8 @@ export { default as List } from './components/list'
 export { default as Popover } from './components/popover'
 export { default as Statistic } from './components/statistic'
 export { default as Table } from './components/table'
+export { default as Tabs } from './components/tabs'
+export { default as Tooltip } from './components/tooltip'
 export {
     Button,
     Typography,
@@ -22,6 +24,9 @@ export {
     Comment,
     Descriptions,
     Empty,
+    Tag,
+    Timeline,
+    Tree,
 
     Modal,
 } from '@arco-design/web-react'

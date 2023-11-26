@@ -127,18 +127,18 @@ const Metadata: IPublicTypeComponentMetadata = {
                             value: [
                             ],
                         },
-                        children: {
-                            type: 'JSSlot',
-                            value: [
-                                {
-                                    componentName: 'Basic',
-                                    props: {
-                                        tag: 'p',
-                                        children: "ByteDance's core product, Toutiao ('Headlines'), is a content platform in China and around\n        the world. Toutiao started out as a news recommendation engine and gradually evolved into a\n        platform delivering content in various formats, such as texts, images, question-and-answer\n        posts, microblogs, and videos."
-                                    },
-                                }
-                            ],
-                        } as any
+                    },
+                    children: {
+                        type: 'JSSlot',
+                        value: [
+                            {
+                                componentName: 'Basic',
+                                props: {
+                                    tag: 'p',
+                                    children: "ByteDance's core product, Toutiao ('Headlines'), is a content platform in China and around\n        the world. Toutiao started out as a news recommendation engine and gradually evolved into a\n        platform delivering content in various formats, such as texts, images, question-and-answer\n        posts, microblogs, and videos."
+                                },
+                            }
+                        ],
                     }
                 }
             ]
