@@ -9,6 +9,8 @@ export { default as Statistic } from './components/statistic'
 export { default as Table } from './components/table'
 export { default as Tabs } from './components/tabs'
 export { default as Tooltip } from './components/tooltip'
+export { default as AutoComplete } from './components/Auto-complete'
+export { default as Cascader } from './components/cascader'
 export {
     Button,
     Typography,
@@ -27,6 +29,7 @@ export {
     Tag,
     Timeline,
     Tree,
+    Checkbox,
 
     Modal,
 } from '@arco-design/web-react'

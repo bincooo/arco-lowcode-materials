@@ -11,7 +11,7 @@ module.exports = {
         library,
         noParse: true,
         engineScope: "@alilc",
-        categories: ['基础', '通用', '数据显示', '布局'],
+        categories: ['基础', '通用', '数据输入', '数据显示', '布局'],
         builtinAssets: [
         ]
       },

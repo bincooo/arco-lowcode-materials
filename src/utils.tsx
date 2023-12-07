@@ -31,7 +31,7 @@ function withWarp(
   ) {
     let { children, ...others } = props
     if (isEditor(props)) {
-        return <div  ref={ref} style={ inline ? { display: 'inline-block' } : {}}>
+        return <div  ref={ref} style={ inline ? { display: 'inline-grid' } : {}}>
             <Comp children={children} {...others} />
         </div>
     }
