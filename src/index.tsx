@@ -30,6 +30,7 @@ export {
     Timeline,
     Tree,
     Checkbox,
+    DatePicker,
 
     Modal,
 } from '@arco-design/web-react'
