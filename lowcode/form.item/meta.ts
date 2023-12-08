@@ -360,7 +360,7 @@ const Metadata: IPublicTypeComponentMetadata = {
                 parentWhitelist: [ 'Form', 'FormList' ],
                 childWhitelist: (newNode: any, currentNode: any) => {
                     // 只允许拖入单个物料
-                    return currentNode.isEmptyNode && !newNode.isContainer
+                    return currentNode.isEmptyNode
                 }
             }
         },

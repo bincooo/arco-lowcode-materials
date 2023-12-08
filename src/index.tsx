@@ -13,6 +13,10 @@ export { default as AutoComplete } from './components/Auto-complete'
 export { default as Cascader } from './components/cascader'
 export { default as Form } from './components/form'
 export { default as Input } from './components/input'
+export { default as InputTag } from './components/input-tag'
+export { default as InputNumber } from './components/input-number'
+export { default as VerificationCode } from './components/verification-code'
+export { default as Select } from './components/select'
 export {
     Button,
     Typography,
@@ -33,6 +37,9 @@ export {
     Tree,
     Checkbox,
     DatePicker,
+    Mentions,
+    Radio,
+    Rate,
 
     Modal,
 } from '@arco-design/web-react'
