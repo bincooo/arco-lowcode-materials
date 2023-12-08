@@ -78,7 +78,7 @@
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.55.2",
+    "@arco-design/web-react": "^2.56.2",
     "@babel/runtime": "^7.0.0",
     "moment": "latest"
   },

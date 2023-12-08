@@ -86,7 +86,6 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             title: componentTitle,
             props: {
-                children: "选项"
             }
         }
     }
