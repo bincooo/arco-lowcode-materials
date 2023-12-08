@@ -41,7 +41,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     {
                         componentName: 'RadioGroupSetter',
                         props: {
-                            optinos: [
+                            options: [
                                 { title: 'left', value: 'left' },
                                 { title: 'right', value: 'right' },
                             ]
@@ -59,7 +59,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     {
                         componentName: 'RadioGroupSetter',
                         props: {
-                            optinos: [
+                            options: [
                                 { title: 'horizontal', value: 'horizontal' },
                                 { title: 'vertical', value: 'vertical' },
                                 { title: 'inline', value: 'inline' },
@@ -87,7 +87,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                                         setter: {
                                             componentName: 'RadioGroupSetter',
                                             props: {
-                                                optinos: [
+                                                options: [
                                                     { title: 'start', value: 'start' },
                                                     { title: 'end', value: 'end' },
                                                 ]
@@ -110,7 +110,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     {
                         componentName: 'RadioGroupSetter',
                         props: {
-                            optinos: [
+                            options: [
                                 { title: 'mini', value: 'mini' },
                                 { title: 'small', value: 'small' },
                                 { title: 'default', value: 'default' },

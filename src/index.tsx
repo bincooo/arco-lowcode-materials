@@ -12,6 +12,7 @@ export { default as Tooltip } from './components/tooltip'
 export { default as AutoComplete } from './components/Auto-complete'
 export { default as Cascader } from './components/cascader'
 export { default as Form } from './components/form'
+export { default as Input } from './components/input'
 export {
     Button,
     Typography,

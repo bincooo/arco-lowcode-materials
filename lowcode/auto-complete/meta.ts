@@ -112,7 +112,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                     {
                         componentName: 'RadioGroupSetter',
                         props: {
-                            items: [
+                            options: [
                                 { title: 'error', value: 'error' },
                                 { title: 'warning', value: 'warning' },
                             ]

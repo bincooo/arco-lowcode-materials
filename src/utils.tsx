@@ -36,6 +36,7 @@ function withWarp(
         </div>
     }
 
+    console.log(props)
     return <Comp ref={ref} {...others} children={children} />
 }
 

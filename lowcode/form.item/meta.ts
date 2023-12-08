@@ -374,7 +374,7 @@ const snippets: IPublicTypeSnippet[] = [
             componentName,
             title: componentTitle,
             props: {
-                
+                label: "标签"
             }
         }
     }

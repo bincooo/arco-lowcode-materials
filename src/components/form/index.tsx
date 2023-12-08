@@ -1,6 +1,6 @@
 import { Ref, forwardRef, createElement } from 'react';
 import { Form } from '@arco-design/web-react';
-import { withWarp, isEditor } from '../../utils';
+import { withWarp } from '../../utils';
 
 
 const FormBox = forwardRef((props: any, ref: Ref<any>) => {
@@ -16,14 +16,7 @@ const FormItemBox = forwardRef((props: any, ref: Ref<any>) => {
 })
 
 const ProviderBox = (props: any, ref: Ref<any>) => {
-    let { children, ...others } = props
-    if (isEditor(props)) {
-        return <div>
-            <Form.Provider ref={ref} children={children} {...others} />
-        </div>
-    }
-
-    return <Form.Provider ref={ref} {...others} />
+    return <Form.Provider ref={ref} {...props} />
 }
 
 ;(FormBox as any).Item = FormItemBox
