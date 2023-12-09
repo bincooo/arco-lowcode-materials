@@ -1,7 +1,7 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "Group"
+const componentName: string = "GroupInput"
 const componentTitle: string = "输入框组合"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
@@ -32,7 +32,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
-    npm: pack("Input", componentName),
+    npm: pack("Input", "Group"),
     category: '数据输入',
     group: 'arco组件',
     props: [
@@ -44,6 +44,9 @@ const Metadata: IPublicTypeComponentMetadata = {
                 ...baseEvents,
             ],
             style: true
+        },
+        component: {
+            isContainer: true,
         }
     }
 };

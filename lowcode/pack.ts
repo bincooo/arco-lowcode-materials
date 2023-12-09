@@ -19,7 +19,7 @@ export const baseEvents = [
 ]
 
 export const baseProps: IPublicTypeFieldConfig = {
-    title: '通用',
+    title: '基础',
     display: 'block',
     type: 'group',
     items: [

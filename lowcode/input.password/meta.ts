@@ -1,8 +1,8 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 import _props, { events } from '../input/base'
-const componentName: string = "TextArea"
-const componentTitle: string = "文本域输入框"
+const componentName: string = "PasswordInput"
+const componentTitle: string = "密码输入框"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
@@ -52,7 +52,7 @@ const Metadata: IPublicTypeComponentMetadata = {
     docUrl: "",
     screenshot: "",
     devMode: "proCode",
-    npm: pack("Input", componentName),
+    npm: pack("Input", "Password"),
     category: '数据输入',
     group: 'arco组件',
     props: [

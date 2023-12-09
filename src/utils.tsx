@@ -29,14 +29,15 @@ function withWarp(
     ref: Ref<any>,
     inline: boolean = true
   ) {
-    let { children, ...others } = props
     if (isEditor(props)) {
-        return <div  ref={ref} style={ inline ? { display: 'inline-grid' } : {}}>
-            <Comp children={children} {...others} />
+        let { style = {}, ...others } = props
+        let { width, height, ...styleOthers } = style
+        return <div ref={ref} style={ inline ? { display: 'inline-grid', width, height } : { width, height }}>
+            <Comp {...others} style={styleOthers} />
         </div>
     }
 
-    return <Comp ref={ref} {...others} children={children} />
+    return <Comp ref={ref} {...props} />
 }
 
 // 用于组件只能接收一个children内容的适配处理

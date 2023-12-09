@@ -17,6 +17,7 @@ export { default as InputTag } from './components/input-tag'
 export { default as InputNumber } from './components/input-number'
 export { default as VerificationCode } from './components/verification-code'
 export { default as Select } from './components/select'
+export { default as Slider } from './components/slider'
 export {
     Button,
     Typography,
@@ -40,6 +41,8 @@ export {
     Mentions,
     Radio,
     Rate,
+    Switch,
+    TimePicker,
 
     Modal,
 } from '@arco-design/web-react'

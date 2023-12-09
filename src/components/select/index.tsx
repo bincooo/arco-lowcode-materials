@@ -4,15 +4,16 @@ import { isEditor } from '../../utils'
 
 const SelectBox = forwardRef((props: any, ref: Ref<any>) => {
     const inline = !!props.style?.width ?? false
-    let { children, ...others } = props
+    let { children, style = {}, ...others } = props
     if (isEditor(props)) {
-        return <div  ref={ref} style={ inline ? { display: 'inline-grid' } : {}}>
-            <Select {...props} />
+        let { width, height, ...styleOthers } = style
+        return <div  ref={ref} style={ inline ? { display: 'inline-grid', width, height } : { width, height }}>
+            <Select {...others} children={children} style={styleOthers} />
         </div>
     }
 
     // 非编辑模式不渲染 SelectOptionBox
-    return <Select ref={ref} {...others}
+    return <Select ref={ref} {...others} style={style}
         children={children.map(item => {
             return <Select.Option {...item.props} />
         })}
