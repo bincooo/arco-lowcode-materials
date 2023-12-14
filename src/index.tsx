@@ -46,6 +46,8 @@ export {
     Switch,
     TimePicker,
     Transfer,
+    Alert,
+    Drawer,
 
     Modal,
 } from '@arco-design/web-react'
