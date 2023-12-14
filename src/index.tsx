@@ -18,6 +18,8 @@ export { default as InputNumber } from './components/input-number'
 export { default as VerificationCode } from './components/verification-code'
 export { default as Select } from './components/select'
 export { default as Slider } from './components/slider'
+export { default as TreeSelect } from './components/tree-select'
+export { default as Upload } from './components/upload'
 export {
     Button,
     Typography,
@@ -43,6 +45,7 @@ export {
     Rate,
     Switch,
     TimePicker,
+    Transfer,
 
     Modal,
 } from '@arco-design/web-react'
