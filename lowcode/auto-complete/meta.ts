@@ -194,7 +194,7 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 name: 'getPopupContainer',
                 title: {
                     label: '弹出框挂载的父节点',
-                    tip: 'filterOption | 弹出框挂载的父节点。'
+                    tip: 'getPopupContainer | 弹出框挂载的父节点。'
                 },
                 setter: [
                     { componentName: 'FunctionSetter', },

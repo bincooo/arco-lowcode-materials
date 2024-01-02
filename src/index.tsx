@@ -20,6 +20,8 @@ export { default as Select } from './components/select'
 export { default as Slider } from './components/slider'
 export { default as TreeSelect } from './components/tree-select'
 export { default as Upload } from './components/upload'
+export { default as Popconfirm } from './components/popconfirm'
+export { default as Watermark } from './components/watermark'
 export {
     Button,
     Typography,
@@ -48,7 +50,12 @@ export {
     Transfer,
     Alert,
     Drawer,
-
+    Message,
+    Notification,
+    Progress,
+    Result,
     Modal,
+    Spin,
+    Skeleton,
 } from '@arco-design/web-react'
 import '@arco-design/web-react/dist/css/index.less'
