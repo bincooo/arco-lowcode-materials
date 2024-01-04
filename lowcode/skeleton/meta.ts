@@ -90,7 +90,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '', // require('./__screenshots__/icon.png'),
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,

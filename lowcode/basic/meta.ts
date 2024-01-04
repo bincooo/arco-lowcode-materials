@@ -88,7 +88,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "div",
-        screenshot: '',
+        screenshot: require('./__screenshots__/div.png'),
         schema: {
             title: 'div',
             componentName,
@@ -100,7 +100,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "ol",
-        screenshot: '',
+        screenshot: require('./__screenshots__/ol.png'),
         schema: {
             title: 'ol',
             componentName,
@@ -112,7 +112,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "ul",
-        screenshot: '',
+        screenshot: require('./__screenshots__/ul.png'),
         schema: {
             title: 'ul',
             componentName,
@@ -124,7 +124,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "li",
-        screenshot: '',
+        screenshot: require('./__screenshots__/li.png'),
         schema: {
             title: 'li',
             componentName,
@@ -136,7 +136,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "p",
-        screenshot: '',
+        screenshot: require('./__screenshots__/p.png'),
         schema: {
             title: 'p',
             componentName,
@@ -148,7 +148,7 @@ const snippets: IPublicTypeSnippet[] = [
     },
     {
         title: "img",
-        screenshot: '',
+        screenshot: require('./__screenshots__/img.png'),
         schema: {
             title: 'img',
             componentName,

@@ -3,7 +3,7 @@ import pack, { baseEvents, baseProps } from '../pack'
 import _props, { events } from '../time-picker/base'
 
 const componentName: string = "RangePicker"
-const componentTitle: string = "时间区间选择器"
+const componentTitle: string = "时间区间"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
@@ -97,7 +97,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '', // require('./__screenshots__/icon.png'),
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,

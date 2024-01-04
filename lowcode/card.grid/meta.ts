@@ -2,7 +2,7 @@ import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfi
 import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "CardGrid"
-const componentTitle: string = "内嵌网格卡片"
+const componentTitle: string = "网格卡片"
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -50,7 +50,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '',
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,

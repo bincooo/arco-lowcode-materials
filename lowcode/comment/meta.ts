@@ -86,7 +86,6 @@ const Metadata: IPublicTypeComponentMetadata = {
     componentName,
     title: componentTitle,
     docUrl: '',
-    screenshot: "",
     devMode: "proCode",
     npm: pack(componentName),
     category: '数据显示',
@@ -104,7 +103,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '',
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,

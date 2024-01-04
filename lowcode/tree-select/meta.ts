@@ -2,7 +2,7 @@ import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfi
 import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "TreeSelect"
-const componentTitle: string = "树选择输入框"
+const componentTitle: string = "树选择框"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
@@ -613,7 +613,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '', // require('./__screenshots__/icon.png'),
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,

@@ -2,7 +2,7 @@ import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfi
 import pack, { baseEvents, baseProps } from '../pack'
 
 const componentName: string = "StatisticCountdown"
-const componentTitle: string = "数值计时显示"
+const componentTitle: string = "数值计时"
 
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
@@ -111,7 +111,7 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: '',
+        screenshot: require('./__screenshots__/1.png'),
         schema: {
             componentName,
             title: componentTitle,
