@@ -1,8 +1,9 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "CardMeta"
-const componentTitle: string = "卡片描述"
+const componentName: string = "MenuItem"
+const componentTitle: string = "子菜单"
+
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -11,18 +12,10 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
-                name: 'avatar',
+                name: 'children',
                 title: {
-                  label: '头像',
-                  tip: 'avatar | 头像',
-                },
-                setter: { componentName: 'SlotSetter' },
-            },
-            {
-                name: 'description',
-                title: {
-                  label: '描述',
-                  tip: 'description | 描述',
+                    label: '内容',
+                    tip: 'children | 内容',
                 },
                 setter: [
                     { componentName: 'StringSetter' },
@@ -30,48 +23,55 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ],
             },
             {
-                name: 'title',
+                name: 'disabled',
                 title: {
-                  label: '标题',
-                  tip: 'title | 标题',
+                    label: '菜单项禁止选中',
+                    tip: 'disabled | 菜单项禁止选中',
+                },
+                setter: [
+                    { componentName: 'BoolSetter' },
+                ],
+            },
+            {
+                name: 'wrapper',
+                title: {
+                    label: '配置最外层标签',
+                    tip: 'wrapper | 配置最外层标签，可以是 html 标签或是组件',
                 },
                 setter: [
                     { componentName: 'StringSetter' },
+                    { componentName: 'SlotSetter' },
+                ],
+            },
+            {
+                name: 'renderItemInTooltip',
+                title: {
+                    label: '菜单折叠Tooltip节点',
+                    tip: 'renderItemInTooltip | 菜单折叠时，指定在 Tooltip 中展示的菜单项节点',
+                },
+                setter: [
                     { componentName: 'SlotSetter' },
                 ],
             },
         ]
-    }
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
     title: componentTitle,
-    docUrl: '',
+    docUrl: "",
     screenshot: "",
     devMode: "proCode",
-    npm: pack("Card", "Meta"),
-    category: '数据显示',
+    npm: pack("Menu", "Item"),
+    category: '导航',
     group: 'arco组件',
     props: [
     ],
     configure: {
         props: fieldConfig,
         supports: {
-            events: baseEvents,
             style: true,
-        },
-        component: {
-            nestingRule: {
-                parentWhitelist: (target: any, self: any) => {
-                    if (target.componentName == 'Card' || (
-                        target.componentName == 'Slot' && target.parent.componentName == 'Card'
-                    )) {
-                        return true
-                    }
-                    return false
-                }
-            }
         },
     }
 };
@@ -85,10 +85,10 @@ const snippets: IPublicTypeSnippet[] = [
             props: {
             }
         }
-    },
+    }
 ];
 
 export default {
   ...Metadata,
-  snippets
+//   snippets
 };

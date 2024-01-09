@@ -1,8 +1,9 @@
 import { IPublicTypeComponentMetadata, IPublicTypeSnippet, IPublicTypeFieldConfig } from '@alilc/lowcode-types';
 import pack, { baseEvents, baseProps } from '../pack'
 
-const componentName: string = "CardMeta"
-const componentTitle: string = "卡片描述"
+const componentName: string = "BreadcrumbItem"
+const componentTitle: string = "面包屑子组件"
+
 const fieldConfig: IPublicTypeFieldConfig[] = [
     baseProps,
     {
@@ -11,18 +12,20 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
         type: 'group',
         items: [
             {
-                name: 'avatar',
+                name: 'href',
                 title: {
-                  label: '头像',
-                  tip: 'avatar | 头像',
+                    label: '超链接地址',
+                    tip: 'href | 超链接地址',
                 },
-                setter: { componentName: 'SlotSetter' },
+                setter: [
+                    { componentName: 'StringSetter' },
+                ],
             },
             {
-                name: 'description',
+                name: 'tagName',
                 title: {
-                  label: '描述',
-                  tip: 'description | 描述',
+                    label: '标签名',
+                    tip: 'tagName | 标签名，可以是 html 标签或是组件',
                 },
                 setter: [
                     { componentName: 'StringSetter' },
@@ -30,47 +33,52 @@ const fieldConfig: IPublicTypeFieldConfig[] = [
                 ],
             },
             {
-                name: 'title',
+                name: 'droplist',
                 title: {
-                  label: '标题',
-                  tip: 'title | 标题',
+                    label: '下拉菜单的内容',
+                    tip: 'droplist | 下拉菜单的内容，等同于下拉菜单组件的 droplist 属性',
                 },
                 setter: [
-                    { componentName: 'StringSetter' },
                     { componentName: 'SlotSetter' },
+                ],
+            },
+            {
+                name: 'dropdownProps',
+                title: {
+                    label: '下拉菜单的属性',
+                    tip: 'dropdownProps | 下拉菜单的属性 DropdownProps',
+                },
+                setter: [
+                    { componentName: 'JsonSetter' },
                 ],
             },
         ]
-    }
+    },
 ];
 
 const Metadata: IPublicTypeComponentMetadata = {
     componentName,
     title: componentTitle,
-    docUrl: '',
+    docUrl: "",
     screenshot: "",
     devMode: "proCode",
-    npm: pack("Card", "Meta"),
-    category: '数据显示',
+    npm: pack("Breadcrumb", "Item"),
+    category: '导航',
     group: 'arco组件',
     props: [
     ],
     configure: {
         props: fieldConfig,
         supports: {
-            events: baseEvents,
+            events: [
+                ...baseEvents
+            ],
             style: true,
         },
         component: {
+            isContainer: true,
             nestingRule: {
-                parentWhitelist: (target: any, self: any) => {
-                    if (target.componentName == 'Card' || (
-                        target.componentName == 'Slot' && target.parent.componentName == 'Card'
-                    )) {
-                        return true
-                    }
-                    return false
-                }
+                childWhitelist: [ 'BreadcrumbItem' ]
             }
         },
     }
@@ -78,17 +86,17 @@ const Metadata: IPublicTypeComponentMetadata = {
 const snippets: IPublicTypeSnippet[] = [
     {
         title: componentTitle,
-        screenshot: require('./__screenshots__/1.png'),
+        screenshot: '',
         schema: {
             componentName,
             title: componentTitle,
             props: {
             }
         }
-    },
+    }
 ];
 
 export default {
   ...Metadata,
-  snippets
+//   snippets
 };

@@ -22,6 +22,16 @@ function isSlot(obj: any) {
     return false
 }
 
+function findTarget<E extends Element = Element>(props: any): E | null {
+    var selectors = ''
+    if (isEditor(props)) {
+        selectors = "[__tag='" + props.__tag + "']"
+    } else {
+        selectors = "[__id='" + props.__id + "']"
+    }
+    return document.querySelector(selectors)
+}
+
 // 特殊情况无法选中，或者没有宽高时可以试试这样
 function withWarp(
     Comp: ComponentType<any>,
@@ -47,14 +57,15 @@ function withSingleChild(
     ref: Ref<any>,
     inline: boolean = true
   ) {
-    let { children, ...others } = props
+    let { style = {}, children, ...others } = props
+    let { width, height, ...styleOthers } = style
     if (isEditor(props)) {
         if (isEmptyChild(children)) {
-            return <div ref={ref} {...props} />
+            return <div ref={ref} {...props} style={inline ? {width: '320px'} : {}} />
         }
 
-        return <div  ref={ref} style={inline ? { display: 'inline-block' } : {}}>
-            <Comp children={<span children={children} />} {...others} />
+        return <div  ref={ref} style={inline ? { display: 'inline-grid' } : {}}>
+            <Comp children={<span children={children} />} {...others} style={styleOthers} />
         </div>
     }
 
@@ -69,5 +80,6 @@ export {
     isEmptyChild,
     isSlot,
     withWarp,
-    withSingleChild
+    withSingleChild,
+    findTarget
 }
