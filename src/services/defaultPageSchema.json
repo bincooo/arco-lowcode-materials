@@ -1,0 +1,1198 @@
+{
+  "componentName": "Page",
+  "id": "node_dockcviv8fo1",
+  "props": {
+    "ref": "outerView",
+    "style": {
+      "height": "100%"
+    }
+  },
+  "docId": "doclaqkk3b9",
+  "fileName": "/",
+  "dataSource": {
+    "list": [
+      {
+        "type": "fetch",
+        "isInit": true,
+        "options": {
+          "params": {},
+          "method": "GET",
+          "isCors": true,
+          "timeout": 5000,
+          "headers": {},
+          "uri": "mock/info.json"
+        },
+        "id": "info",
+        "shouldFetch": {
+          "type": "JSFunction",
+          "value": "function() { \n  console.log('should fetch.....');\n  return true; \n}"
+        }
+      }
+    ]
+  },
+  "state": {
+    "text": {
+      "type": "JSExpression",
+      "value": "\"outer\""
+    },
+    "isShowDialog": {
+      "type": "JSExpression",
+      "value": "false"
+    }
+  },
+  "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
+  "lifeCycles": {
+    "componentDidMount": {
+      "type": "JSFunction",
+      "value": "function componentDidMount() {\n  console.log('did mount');\n  const formInstance = this.$('form-df8db022');\n  formInstance.setFieldsValue({\n    area: {\n      select: 'Tianjin',\n      value: 'hello'\n    }\n  });\n}",
+      "source": "function componentDidMount() {\n  console.log('did mount');\n  const formInstance = this.$('form-df8db022');\n  formInstance.setFieldsValue({\n    area: {\n      select: 'Tianjin',\n      value: 'hello'\n    }\n  });\n}"
+    },
+    "componentWillUnmount": {
+      "type": "JSFunction",
+      "value": "function componentWillUnmount() {\n  console.log('will unmount');\n}",
+      "source": "function componentWillUnmount() {\n  console.log('will unmount');\n}"
+    }
+  },
+  "methods": {
+    "testFunc": {
+      "type": "JSFunction",
+      "value": "function testFunc() {\n  console.log('test func');\n}",
+      "source": "function testFunc() {\n  console.log('test func');\n}"
+    },
+    "closeDialog": {
+      "type": "JSFunction",
+      "value": "function closeDialog() {\n  this.setState({\n    isShowDialog: false\n  });\n}",
+      "source": "function closeDialog() {\n  this.setState({\n    isShowDialog: false\n  });\n}"
+    },
+    "getHelloWorldText": {
+      "type": "JSFunction",
+      "value": "function getHelloWorldText() {\n  return this.i18n('i18n-jwg27yo4');\n}",
+      "source": "function getHelloWorldText() {\n  return this.i18n('i18n-jwg27yo4');\n}"
+    },
+    "getHelloWorldText2": {
+      "type": "JSFunction",
+      "value": "function getHelloWorldText2() {\n  return this.i18n('i18n-jwg27yo3', {\n    name: '絮黎'\n  });\n}",
+      "source": "function getHelloWorldText2() {\n  return this.i18n('i18n-jwg27yo3', {\n    name: '絮黎'\n  });\n}"
+    },
+    "onTestConstantsButtonClicked": {
+      "type": "JSFunction",
+      "value": "function onTestConstantsButtonClicked() {\n  console.log('constants.ConstantA:', this.constants.ConstantA);\n  console.log('constants.ConstantB:', this.constants.ConstantB);\n}",
+      "source": "function onTestConstantsButtonClicked() {\n  console.log('constants.ConstantA:', this.constants.ConstantA);\n  console.log('constants.ConstantB:', this.constants.ConstantB);\n}"
+    },
+    "onTestUtilsButtonClicked": {
+      "type": "JSFunction",
+      "value": "function onTestUtilsButtonClicked() {\n  this.utils.demoUtil('param1', 'param2');\n}",
+      "source": "function onTestUtilsButtonClicked() {\n  this.utils.demoUtil('param1', 'param2');\n}"
+    },
+    "onFormValues": {
+      "type": "JSFunction",
+      "value": "function onFormValues(name, changedValues, info) {\n  // 包裹的任意 Form 组件的值改变时，该方法会被调用\n  console.log('onFormValuesChange', name, changedValues, info);\n}",
+      "source": "function onFormValues(name, changedValues, info) {\n  // 包裹的任意 Form 组件的值改变时，该方法会被调用\n  console.log('onFormValuesChange', name, changedValues, info);\n}"
+    },
+    "onClick": {
+      "type": "JSFunction",
+      "value": "function onClick(event) {\n  // 点击按钮时的回调\n  console.log('onClick', event, this);\n  // const { Message, Notification } = this.context.components;\n  // Message.info('Hello Arco!');\n  // Notification.info({\n  //   closable: false,\n  //   title: 'Notification',\n  //   content: 'This is a notification!'\n  // });\n  const formInstance = this.$('form-df8db022');\n  console.log(formInstance.getFieldsValue());\n  this.setState({\n    isShowDialog: true\n  });\n}",
+      "source": "function onClick(event) {\n  // 点击按钮时的回调\n  console.log('onClick', event, this);\n  // const { Message, Notification } = this.context.components;\n  // Message.info('Hello Arco!');\n  // Notification.info({\n  //   closable: false,\n  //   title: 'Notification',\n  //   content: 'This is a notification!'\n  // });\n  const formInstance = this.$('form-df8db022');\n  console.log(formInstance.getFieldsValue());\n  this.setState({\n    isShowDialog: true\n  });\n}"
+    },
+    "onOk": {
+      "type": "JSFunction",
+      "value": "function onOk(event) {\n  // 点击确认按钮的回调函数\n  console.log('onOk', event);\n  const {\n    Message\n  } = this.context.components;\n  Message.info('Click onOk');\n}",
+      "source": "function onOk(event) {\n  // 点击确认按钮的回调函数\n  console.log('onOk', event);\n  const {\n    Message\n  } = this.context.components;\n  Message.info('Click onOk');\n}"
+    },
+    "onCancel": {
+      "type": "JSFunction",
+      "value": "function onCancel(event) {\n  // 点击取消按钮的回调函数\n  console.log('onCancel', event);\n  const {\n    Message\n  } = this.context.components;\n  Message.info('Click onCancel');\n}",
+      "source": "function onCancel(event) {\n  // 点击取消按钮的回调函数\n  console.log('onCancel', event);\n  const {\n    Message\n  } = this.context.components;\n  Message.info('Click onCancel');\n}"
+    },
+    "onChange": {
+      "type": "JSFunction",
+      "value": "function onChange(value, event) {\n  // 点击开关的回调\n  console.log('onChange', value);\n  this.setState({\n    loading: value\n  });\n}",
+      "source": "function onChange(value, event) {\n  // 点击开关的回调\n  console.log('onChange', value);\n  this.setState({\n    loading: value\n  });\n}"
+    },
+    "onChange_new": {
+      "type": "JSFunction",
+      "value": "function onChange_new(value, event, extParams) {\n  // 点击选择框的回调\n  const formInstance = this.$('form-df8db022');\n  const oldValue = formInstance.getFieldValue('area');\n  const {\n    type\n  } = extParams;\n  if (type == 'value') {\n    this.utils.setValue(this, 'input-5307b13a', value);\n  } else {\n    this.utils.setValue(this, 'select-5166abe2', value);\n  }\n  formInstance.setFieldValue('area', {\n    ...oldValue,\n    [type]: value\n  });\n  console.log('onChange', extParams, oldValue, value);\n}",
+      "source": "function onChange_new(value, event, extParams) {\n  // 点击选择框的回调\n  const formInstance = this.$('form-df8db022');\n  const oldValue = formInstance.getFieldValue('area');\n  const {\n    type\n  } = extParams;\n  if (type == 'value') {\n    this.utils.setValue(this, 'input-5307b13a', value);\n  } else {\n    this.utils.setValue(this, 'select-5166abe2', value);\n  }\n  formInstance.setFieldValue('area', {\n    ...oldValue,\n    [type]: value\n  });\n  console.log('onChange', extParams, oldValue, value);\n}"
+    }
+  },
+  "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false\n  }\n  componentDidMount() {\n    console.log('did mount');\n    const formInstance = this.$('form-df8db022')\n    formInstance.setFieldsValue({\n      area: {\n        select: 'Tianjin',\n        value: 'hello'\n      }\n    });\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    });\n  }\n  getHelloWorldText() {\n    return this.i18n('i18n-jwg27yo4');\n  }\n  getHelloWorldText2() {\n    return this.i18n('i18n-jwg27yo3', {\n      name: '絮黎',\n    });\n  }\n  onTestConstantsButtonClicked() {\n    console.log('constants.ConstantA:', this.constants.ConstantA);\n    console.log('constants.ConstantB:', this.constants.ConstantB);\n\t}\n\tonTestUtilsButtonClicked(){\n    this.utils.demoUtil('param1', 'param2');\n\t}\n\n  onFormValues(name, changedValues, info) {\n    // 包裹的任意 Form 组件的值改变时，该方法会被调用\n    console.log('onFormValuesChange', name, changedValues, info);\n  }\n  onClick(event) {\n    // 点击按钮时的回调\n    console.log('onClick', event, this);\n    // const { Message, Notification } = this.context.components;\n    // Message.info('Hello Arco!');\n    // Notification.info({\n    //   closable: false,\n    //   title: 'Notification',\n    //   content: 'This is a notification!'\n    // });\n    const formInstance = this.$('form-df8db022')\n    console.log(formInstance.getFieldsValue())\n    this.setState({\n      isShowDialog: true\n    });\n  }\n  onOk(event) {\n    // 点击确认按钮的回调函数\n    console.log('onOk', event);\n    const { Message } = this.context.components;\n    Message.info('Click onOk');\n  }\n  onCancel(event) {\n    // 点击取消按钮的回调函数\n    console.log('onCancel', event);\n    const { Message } = this.context.components;\n    Message.info('Click onCancel');\n  }\n  onChange(value, event) {\n    // 点击开关的回调\n    console.log('onChange', value);\n    this.setState({\n      loading: value\n    })\n  }\n  onChange_new(value, event, extParams) {\n    // 点击选择框的回调\n    const formInstance = this.$('form-df8db022')\n    const oldValue = formInstance.getFieldValue('area')\n    const { type } = extParams\n    if (type == 'value') {\n      this.utils.setValue(this, 'input-5307b13a', value)\n    } else {\n      this.utils.setValue(this, 'select-5166abe2', value)\n    }\n    formInstance.setFieldValue('area', { ...oldValue, [type]: value });\n    console.log('onChange', extParams, oldValue, value);\n  }\n}",
+  "hidden": false,
+  "title": "",
+  "isLocked": false,
+  "condition": true,
+  "conditionGroup": "",
+  "children": [
+    {
+      "componentName": "Message",
+      "id": "node_oclr6uffbo15",
+      "props": {
+        "visible": true
+      },
+      "title": "全局提示",
+      "hidden": true,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Notification",
+      "id": "node_oclr6uffbo1a",
+      "props": {
+        "visible": true
+      },
+      "title": "通知提醒框",
+      "hidden": true,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Modal",
+      "id": "node_oclr942ss6n",
+      "props": {
+        "visible": {
+          "type": "JSExpression",
+          "value": "this.state.isShowDialog",
+          "mock": false
+        },
+        "title": "表单数据",
+        "children": {
+          "type": "JSExpression",
+          "value": "(() => {\n  const formInstance = this.$('form-df8db022')\n  return JSON.stringify(formInstance.getFieldsValue(), true, 4)\n})()"
+        },
+        "_unsafe_MixedSetter_children_select": "VariableSetter",
+        "__events": {
+          "eventDataList": [
+            {
+              "type": "componentEvent",
+              "name": "onCancel",
+              "relatedEventName": "closeDialog"
+            },
+            {
+              "type": "componentEvent",
+              "name": "onOk",
+              "relatedEventName": "onOk"
+            }
+          ],
+          "eventList": [
+            {
+              "name": "onCancel",
+              "description": "关闭弹出框的回调",
+              "template": "\n\n  onCancel(${extParams}) {\n    // 关闭弹出框的回调\n    console.log('onCancel');\n  }\n",
+              "disabled": true
+            },
+            {
+              "name": "onOk",
+              "description": "点击确认按钮的回调",
+              "template": "\n\n  onOk(event, ${extParams}) {\n    // 点击确认按钮的回调\n    console.log('onOk', event);\n  }\n",
+              "disabled": true
+            }
+          ]
+        },
+        "onCancel": {
+          "type": "JSFunction",
+          "value": "function(){return this.closeDialog.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+        },
+        "onOk": {
+          "type": "JSFunction",
+          "value": "function(){return this.onOk.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+        }
+      },
+      "title": "对话框",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "PageHeader",
+      "id": "node_oclr6u2aut1",
+      "props": {
+        "title": "ArcoDesign",
+        "subTitle": "This is a description",
+        "extra": {
+          "type": "JSSlot",
+          "value": [
+            {
+              "componentName": "RadioGroup",
+              "id": "node_oclr6u2aut7",
+              "props": {
+                "type": "button",
+                "defaultValue": "small"
+              },
+              "title": "单选框组",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Radio",
+                  "id": "node_oclr6u2aut8",
+                  "props": {
+                    "children": "large",
+                    "value": "large"
+                  },
+                  "title": "单选框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "Radio",
+                  "id": "node_oclr6u2aut9",
+                  "props": {
+                    "children": "medium",
+                    "value": "medium"
+                  },
+                  "title": "单选框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "Radio",
+                  "id": "node_oclr6u2auta",
+                  "props": {
+                    "children": "small",
+                    "value": "small"
+                  },
+                  "title": "单选框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            }
+          ],
+          "title": "插槽容器",
+          "id": "node_oclr6u2aut2"
+        }
+      },
+      "title": "页头",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Table",
+      "id": "node_oclr6u2autb",
+      "props": {
+        "pagination": false,
+        "columns": [
+          {
+            "title": "Name",
+            "dataIndex": "name"
+          },
+          {
+            "title": "Salary",
+            "dataIndex": "salary"
+          },
+          {
+            "title": "Address",
+            "dataIndex": "address"
+          },
+          {
+            "title": "Email",
+            "dataIndex": "email"
+          }
+        ],
+        "data": [
+          {
+            "key": "1",
+            "name": "Jane Doe",
+            "salary": 23000,
+            "address": "32 Park Road, London",
+            "email": "jane.doe@example.com"
+          },
+          {
+            "key": "2",
+            "name": "Alisa Ross",
+            "salary": 25000,
+            "address": "35 Park Road, London",
+            "email": "alisa.ross@example.com"
+          },
+          {
+            "key": "3",
+            "name": "Kevin Sandra",
+            "salary": 22000,
+            "address": "31 Park Road, London",
+            "email": "kevin.sandra@example.com"
+          },
+          {
+            "key": "4",
+            "name": "Ed Hellen",
+            "salary": 17000,
+            "address": "42 Park Road, London",
+            "email": "ed.hellen@example.com"
+          },
+          {
+            "key": "5",
+            "name": "William Smith",
+            "salary": 27000,
+            "address": "62 Park Road, London",
+            "email": "william.smith@example.com"
+          }
+        ]
+      },
+      "title": "基础表格",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Pagination",
+      "id": "node_oclr6u2autc",
+      "props": {
+        "showJumper": true,
+        "sizeCanChange": true,
+        "showTotal": true,
+        "total": 50,
+        "style": {
+          "padding": "3px 10px"
+        }
+      },
+      "title": "分页",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Basic",
+      "id": "node_oclr6u2autf",
+      "props": {
+        "tag": "div",
+        "children": "我是DIV标签"
+      },
+      "title": "div",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "FormProvider",
+      "id": "node_oclpw1r8tl4",
+      "props": {
+        "__events": {
+          "eventDataList": [
+            {
+              "type": "componentEvent",
+              "name": "onFormValuesChange",
+              "relatedEventName": "onFormValues"
+            }
+          ],
+          "eventList": [
+            {
+              "name": "onClick",
+              "description": "默认点击事件",
+              "template": "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
+              "disabled": false
+            },
+            {
+              "name": "onFormSubmit",
+              "description": "包裹的任意Form组件触发提交",
+              "template": "\n\n  onFormSubmit(name, values, info, ${extParams}) {\n    // 包裹的任意 Form 组件触发提交时，该方法会被调用\n    console.log('onFormSubmit', values);\n  }\n",
+              "disabled": false
+            },
+            {
+              "name": "onFormValuesChange",
+              "description": "包裹的任意Form组件的值改变",
+              "template": "\n\n  onFormValuesChange(name, changedValues, info, ${extParams}) {\n    // 包裹的任意 Form 组件的值改变时，该方法会被调用\n    console.log('onFormValuesChange', changedValues);\n  }\n",
+              "disabled": true
+            }
+          ]
+        },
+        "onFormValuesChange": {
+          "type": "JSFunction",
+          "value": "function(){return this.onFormValues.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+        }
+      },
+      "title": "表单联动",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": "",
+      "children": [
+        {
+          "componentName": "Form",
+          "id": "node_oclpvs8vqp2",
+          "props": {
+            "style": {
+              "width": "500px"
+            },
+            "id": "",
+            "key": "form",
+            "ref": "form-df8db022"
+          },
+          "title": "表单",
+          "hidden": false,
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": "",
+          "loopArgs": [
+            "",
+            ""
+          ],
+          "children": [
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpvs8vqp3",
+              "props": {
+                "label": "日期",
+                "field": "date"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "DatePicker",
+                  "id": "node_oclpvs8vqp4",
+                  "props": {},
+                  "title": "日期选择器",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw1r8tl2",
+              "props": {
+                "label": "名称",
+                "field": "name"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Input",
+                  "id": "node_oclpx8pcgf1h",
+                  "props": {},
+                  "title": "文本输入框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw3vyx41",
+              "props": {
+                "label": "标签",
+                "field": "tag"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "InputTag",
+                  "id": "node_oclpw3r3dh1",
+                  "props": {},
+                  "title": "标签输入框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw485ol2",
+              "props": {
+                "label": "年龄",
+                "field": "age"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "InputNumber",
+                  "id": "node_oclpw485ol1",
+                  "props": {},
+                  "title": "数字输入框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw4zq0jo",
+              "props": {
+                "label": "验证码",
+                "field": "vcode",
+                "style": {}
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "VerificationCode",
+                  "id": "node_oclpw4zq0j1b",
+                  "props": {
+                    "style": {
+                      "width": "230px"
+                    }
+                  },
+                  "title": "验证码输入框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw6f2z6z",
+              "props": {
+                "label": "性别",
+                "className": "",
+                "field": "sex"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "RadioGroup",
+                  "id": "node_oclpw6lc4ql",
+                  "props": {},
+                  "title": "单选框组",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": "",
+                  "children": [
+                    {
+                      "componentName": "Radio",
+                      "id": "node_oclpw6lc4qm",
+                      "props": {
+                        "children": "男生",
+                        "value": "1"
+                      },
+                      "title": "单选框",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    },
+                    {
+                      "componentName": "Radio",
+                      "id": "node_oclpw6lc4qn",
+                      "props": {
+                        "children": "女生",
+                        "value": "0"
+                      },
+                      "title": "单选框",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpw7nf1wj",
+              "props": {
+                "label": "评分",
+                "field": "mark"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Rate",
+                  "id": "node_oclpw7ogivn",
+                  "props": {
+                    "children": "单选",
+                    "defaultValue": 2,
+                    "count": 10
+                  },
+                  "title": "评分",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpx6dey22n",
+              "props": {
+                "label": "分类",
+                "field": "type"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Select",
+                  "id": "node_oclpx6dey21",
+                  "props": {},
+                  "title": "下拉选择",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": "",
+                  "children": [
+                    {
+                      "componentName": "SelectOption",
+                      "id": "node_oclpx6dey22",
+                      "props": {
+                        "value": 1,
+                        "children": "选项1"
+                      },
+                      "title": "下拉选择项",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    },
+                    {
+                      "componentName": "SelectOption",
+                      "id": "node_oclpx6dey23",
+                      "props": {
+                        "value": 2,
+                        "children": "选项2\n"
+                      },
+                      "title": "下拉选择项",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    },
+                    {
+                      "componentName": "SelectOption",
+                      "id": "node_oclpx6dey22o",
+                      "props": {
+                        "value": 3,
+                        "children": "选项3"
+                      },
+                      "title": "下拉选择项",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclr6ufhlq1",
+              "props": {
+                "label": "地区",
+                "field": "area",
+                "disabled": false,
+                "triggerPropName": "area"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "GroupInput",
+                  "id": "node_oclr6ufhlq2",
+                  "props": {
+                    "compact": true
+                  },
+                  "title": "输入框组合",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": "",
+                  "children": [
+                    {
+                      "componentName": "Select",
+                      "id": "node_oclr6ufhlq3",
+                      "props": {
+                        "style": {
+                          "width": "35%"
+                        },
+                        "defaultValue": "Beijing",
+                        "_unsafe_MixedSetter_defaultValue_select": "StringSetter",
+                        "showSearch": true,
+                        "__events": {
+                          "eventDataList": [
+                            {
+                              "type": "componentEvent",
+                              "name": "onChange",
+                              "relatedEventName": "onChange_new",
+                              "paramStr": "{\n \t \"type\": \"select\" \n}"
+                            }
+                          ],
+                          "eventList": [
+                            {
+                              "name": "onClick",
+                              "description": "默认点击事件",
+                              "template": "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onBlur",
+                              "description": "失去焦点时的回调",
+                              "template": "\n\n  onBlur(event, ${extParams}) {\n    // 失去焦点时的回调\n    console.log('onBlur', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onChange",
+                              "description": "点击选择框的回调",
+                              "template": "\n\n  onChange(event, ${extParams}) {\n    // 点击选择框的回调\n    console.log('onChange', event);\n  }\n",
+                              "disabled": true
+                            },
+                            {
+                              "name": "onClear",
+                              "description": "点击清除时触发",
+                              "template": "\n\n  onClear(visible, ${extParams}) {\n    // 点击清除时触发，参数是当前下拉框的展开状态\n    console.log('onClear', visible);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onClick",
+                              "description": "鼠标点击下拉框时的回调",
+                              "template": "\n\n  onClick(event, ${extParams}) {\n    // 鼠标点击下拉框时的回调\n    console.log('onClick', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onDeselect",
+                              "description": "取消选中的时候触发的回调",
+                              "template": "\n\n  onDeselect(value, option, ${extParams}) {\n    // 取消选中的时候触发的回调，(只在 multiple 模式下触发)\n    console.log('onDeselect', value);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onFocus",
+                              "description": "获得焦点时的回调",
+                              "template": "\n\n  onFocus(event, ${extParams}) {\n    // 获得焦点时的回调\n    console.log('onFocus', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onInputValueChange",
+                              "description": "输入框文本改变的回调",
+                              "template": "\n\n  onInputValueChange(value, reason, ${extParams}) {\n    // 输入框文本改变的回调\n    console.log('onInputValueChange', value);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onKeyDown",
+                              "description": "键盘输入时的回调",
+                              "template": "\n\n  onKeyDown(event, ${extParams}) {\n    // 键盘输入时的回调\n    console.log('onKeyDown', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onPaste",
+                              "description": "输入框文本粘贴的回调",
+                              "template": "\n\n  onPaste(event, ${extParams}) {\n    // 输入框文本粘贴的回调\n    console.log('onPaste', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onPopupScroll",
+                              "description": "下拉框的滚动监听函数",
+                              "template": "\n\n  onPopupScroll(elem, ${extParams}) {\n    // 下拉框的滚动监听函数，参数为滚动元素\n    console.log('onPopupScroll', elem);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onSearch",
+                              "description": "搜索时的回调",
+                              "template": "\n\n  onSearch(value, reason, ${extParams}) {\n    // 搜索时的回调\n    console.log('onSearch', value);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onSelect",
+                              "description": "选中选项时触发的回调",
+                              "template": "\n\n  onSelect(value, option, ${extParams}) {\n    // 选中选项时触发的回调，(只在 multiple 模式下触发)\n    console.log('onSelect', value);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onVisibleChange",
+                              "description": "下拉框收起展开时触发",
+                              "template": "\n\n  onVisibleChange(visible, ${extParams}) {\n    // 下拉框收起展开时触发\n    console.log('onVisibleChange', visible);\n  }\n",
+                              "disabled": false
+                            }
+                          ]
+                        },
+                        "onChange": {
+                          "type": "JSFunction",
+                          "value": "function(){return this.onChange_new.apply(this,Array.prototype.slice.call(arguments).concat([{\n \t \"type\": \"select\" \n}])) }"
+                        },
+                        "value": {
+                          "type": "JSExpression",
+                          "value": "(() => {\n  const formInstance = this.$('form-df8db022')\n  const field = formInstance?.getFieldValue('area') ?? {}\n  return this.utils.initState(this, 'select-5166abe2', field.select)\n})()"
+                        },
+                        "ref": "select-5166abe2",
+                        "_unsafe_MixedSetter_value_select": "VariableSetter"
+                      },
+                      "title": "下拉选择",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": "",
+                      "loopArgs": [
+                        "",
+                        ""
+                      ],
+                      "children": [
+                        {
+                          "componentName": "SelectOption",
+                          "id": "node_oclr6ufhlq4",
+                          "props": {
+                            "value": "Beijing",
+                            "children": "Beijing",
+                            "_unsafe_MixedSetter_value_select": "StringSetter"
+                          },
+                          "title": "下拉选择项",
+                          "hidden": false,
+                          "isLocked": false,
+                          "condition": true,
+                          "conditionGroup": ""
+                        },
+                        {
+                          "componentName": "SelectOption",
+                          "id": "node_oclr6ufhlq5",
+                          "props": {
+                            "value": "Tianjin",
+                            "children": "Tianjin",
+                            "_unsafe_MixedSetter_value_select": "StringSetter"
+                          },
+                          "title": "下拉选择项",
+                          "hidden": false,
+                          "isLocked": false,
+                          "condition": true,
+                          "conditionGroup": ""
+                        },
+                        {
+                          "componentName": "SelectOption",
+                          "id": "node_oclr6ufhlq6",
+                          "props": {
+                            "value": "Shanghai",
+                            "children": "Shanghai",
+                            "_unsafe_MixedSetter_value_select": "StringSetter"
+                          },
+                          "title": "下拉选择项",
+                          "hidden": false,
+                          "isLocked": false,
+                          "condition": true,
+                          "conditionGroup": ""
+                        }
+                      ]
+                    },
+                    {
+                      "componentName": "Input",
+                      "id": "node_oclr6ufhlq7",
+                      "props": {
+                        "style": {
+                          "width": "65%"
+                        },
+                        "__events": {
+                          "eventDataList": [
+                            {
+                              "type": "componentEvent",
+                              "name": "onChange",
+                              "relatedEventName": "onChange_new",
+                              "paramStr": "{\n\t\"type\": \"value\"\n}"
+                            }
+                          ],
+                          "eventList": [
+                            {
+                              "name": "onClick",
+                              "description": "默认点击事件",
+                              "template": "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onChange",
+                              "description": "输入时的回调",
+                              "template": "\n\n  onChange(value, event, ${extParams}) {\n    // 输入时的回调\n    console.log('onChange', value);\n  }\n",
+                              "disabled": true
+                            },
+                            {
+                              "name": "onClear",
+                              "description": "点击清除按钮的回调",
+                              "template": "\n\n  onClear(${extParams}) {\n    // 点击清除按钮的回调\n    console.log('onClear');\n  }\n",
+                              "disabled": false
+                            },
+                            {
+                              "name": "onPressEnter",
+                              "description": "按下回车键的回调",
+                              "template": "\n\n  onPressEnter(event, ${extParams}) {\n    // 按下回车键的回调\n    console.log('onPressEnter', event);\n  }\n",
+                              "disabled": false
+                            }
+                          ]
+                        },
+                        "onChange": {
+                          "type": "JSFunction",
+                          "value": "function(){return this.onChange_new.apply(this,Array.prototype.slice.call(arguments).concat([{\n\t\"type\": \"value\"\n}])) }"
+                        },
+                        "ref": "input-5307b13a",
+                        "value": {
+                          "type": "JSExpression",
+                          "value": "(() => {\n  const formInstance = this.$('form-df8db022')\n  const field = formInstance?.getFieldValue('area') ?? {}\n  return this.utils.initState(this, 'input-5307b13a', field.value)\n})()"
+                        }
+                      },
+                      "title": "文本输入框",
+                      "hidden": false,
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": "",
+                      "loopArgs": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpxdcfvcq",
+              "props": {
+                "label": "是否有效",
+                "field": "disable",
+                "disabled": false
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Switch",
+                  "id": "node_oclpxdcfvc1f",
+                  "props": {
+                    "checkedIcon": "",
+                    "uncheckedText": "",
+                    "_unsafe_MixedSetter_uncheckedText_select": "SlotSetter"
+                  },
+                  "title": "开关",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclq1xcbvu14",
+              "props": {
+                "label": "标签",
+                "disabled": false,
+                "field": "tree"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "TreeSelect",
+                  "id": "node_oclq1xcbvu1",
+                  "props": {
+                    "treeData": [
+                      {
+                        "title": "Trunk 0-0",
+                        "key": "0-0",
+                        "children": [
+                          {
+                            "title": "Branch 0-0-2",
+                            "key": "0-0-2",
+                            "selectable": false,
+                            "children": [
+                              {
+                                "title": "Leaf",
+                                "key": "0-0-2-1",
+                                "children": [
+                                  {
+                                    "title": "Leafsss 0-0-2",
+                                    "key": "0-0-2-1-0",
+                                    "children": [
+                                      {
+                                        "title": "Leaf",
+                                        "key": "0-0-2-1-0-0"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "title": "Trunk 0-1",
+                        "key": "0-1",
+                        "children": [
+                          {
+                            "title": "Branch 0-1-1",
+                            "key": "0-1-1",
+                            "children": [
+                              {
+                                "title": "Leaf",
+                                "key": "0-1-1-0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "树选择输入框",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclq56wdla20",
+              "props": {
+                "label": "图片集",
+                "field": "images",
+                "disabled": false,
+                "triggerPropName": "fileList"
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Upload",
+                  "id": "node_oclq56wdla1",
+                  "props": {
+                    "imagePreview": true,
+                    "multiple": true,
+                    "defaultFileList": [
+                      {
+                        "uid": "-1",
+                        "name": "hahhahahahaha.png",
+                        "url": "//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png~tplv-uwbnlip3yd-webp.webp"
+                      },
+                      {
+                        "uid": "-2",
+                        "name": "20200717-103937.png",
+                        "url": "//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
+                      }
+                    ],
+                    "action": "/upload",
+                    "listType": "picture-card"
+                  },
+                  "title": "上传",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ]
+            },
+            {
+              "componentName": "FormItem",
+              "id": "node_oclpxgukmr14",
+              "props": {
+                "label": "",
+                "style": {
+                  "paddingLeft": "30px",
+                  "textAlign": "right"
+                }
+              },
+              "title": "表单子组件",
+              "hidden": false,
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": "",
+              "children": [
+                {
+                  "componentName": "Button",
+                  "id": "node_oclpxgukmr2f",
+                  "props": {
+                    "type": "primary",
+                    "children": "primary",
+                    "__events": {
+                      "eventDataList": [
+                        {
+                          "type": "componentEvent",
+                          "name": "onClick",
+                          "relatedEventName": "onClick"
+                        }
+                      ],
+                      "eventList": [
+                        {
+                          "name": "onClick",
+                          "description": "默认点击事件",
+                          "template": "\n\n  onClick(event, ${extParams}) {\n    // 点击按钮时的回调\n    console.log('onClick', event);\n  }\n",
+                          "disabled": true
+                        }
+                      ]
+                    },
+                    "onClick": {
+                      "type": "JSFunction",
+                      "value": "function(){return this.onClick.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+                    },
+                    "ref": "button-bb6e007e"
+                  },
+                  "title": "主要按钮",
+                  "hidden": false,
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": "",
+                  "loopArgs": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

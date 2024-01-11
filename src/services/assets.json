@@ -1,0 +1,99 @@
+{
+  "packages": [
+    {
+      "package": "moment",
+      "version": "2.24.0",
+      "urls": [
+        "https://g.alicdn.com/mylib/moment/2.24.0/min/moment.min.js"
+      ],
+      "library": "moment"
+    },
+    {
+      "package": "lodash",
+      "library": "_",
+      "urls": [
+        "https://g.alicdn.com/platform/c/lodash/4.6.1/lodash.min.js"
+      ]
+    },
+    {
+      "title": "fusion组件库",
+      "package": "@alifd/next",
+      "version": "1.26.4",
+      "urls": [
+        "https://g.alicdn.com/code/lib/alifd__next/1.26.4/next.min.css",
+        "https://g.alicdn.com/code/lib/alifd__next/1.26.4/next-with-locales.min.js"
+      ],
+      "library": "Next"
+    },
+    {
+      "title": "Arco组件库",
+      "package": "arco-lowcode-materials",
+      "version": "0.1.0",
+      "urls": [
+        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/render/default/view.js",
+        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/render/default/view.css"
+      ],
+      "editUrls": [
+        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/view.js",
+        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/view.css"
+      ],
+      "library": "ArcoLowc"
+    }
+  ],
+  "components": [
+    {
+      "exportName": "AlifdLayoutMeta",
+      "npm": {
+        "package": "@alifd/layout",
+        "version": "2.4.1"
+      },
+      "url": "https://alifd.alicdn.com/npm/@alifd/layout@2.4.1/build/lowcode/meta.js",
+      "urls": {
+        "default": "https://alifd.alicdn.com/npm/@alifd/layout@2.4.1/build/lowcode/meta.js"
+      }
+    },
+    {
+      "exportName": "ArcoLowcodeMaterialsMeta",
+      "npm": {
+        "package": "arco-lowcode-materials",
+        "version": "0.1.0"
+      },
+      "url": "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/meta.js",
+      "urls": {
+        "default": "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/meta.js"
+      }
+    }
+  ],
+  "sort": {
+    "groupList": [
+      "arco组件",
+      "精选组件",
+      "原子组件",
+      "低代码组件"
+    ],
+    "categoryList": [
+      "基础",
+      "通用",
+      "数据输入",
+      "数据显示",
+      "布局",
+      "基础元素",
+      "布局容器类",
+      "表格类",
+      "表单详情类",
+      "帮助类",
+      "对话框类",
+      "业务类",
+      "引导",
+      "信息输入",
+      "信息展示",
+      "信息反馈"
+    ]
+  },
+  "groupList": [
+    "精选组件",
+    "原子组件",
+    "低代码组件"
+  ],
+  "ignoreComponents": {}
+}
