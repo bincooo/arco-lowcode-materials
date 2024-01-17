@@ -10,25 +10,23 @@
   },
   "fileName": "/",
   "dataSource": {
-      "list": [
-          {
-              "type": "fetch",
-              "isInit": true,
-              "options": {
-                  "params": {},
-                  "method": "GET",
-                  "isCors": true,
-                  "timeout": 5000,
-                  "headers": {},
-                  "uri": "mock/info.json"
-              },
-              "id": "info",
-              "shouldFetch": {
-                  "type": "JSFunction",
-                  "value": "function() { \n  console.log('should fetch.....');\n  return true; \n}"
-              }
-          }
-      ]
+        "list": [
+            {
+                "type": "fetch",
+                "isInit": false,
+                "options": {
+                "params": {},
+                "method": "POST",
+                "isCors": true,
+                "timeout": 5000,
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "uri": "http://127.0.0.1:8080/query"
+                },
+                "id": "graphql"
+            }
+        ]
   },
   "state": {
       "text": {

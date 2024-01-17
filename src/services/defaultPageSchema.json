@@ -13,20 +13,18 @@
     "list": [
       {
         "type": "fetch",
-        "isInit": true,
+        "isInit": false,
         "options": {
           "params": {},
-          "method": "GET",
+          "method": "POST",
           "isCors": true,
           "timeout": 5000,
-          "headers": {},
-          "uri": "mock/info.json"
+          "headers": {
+            "content-type": "application/json"
+          },
+          "uri": "http://127.0.0.1:8080/query"
         },
-        "id": "info",
-        "shouldFetch": {
-          "type": "JSFunction",
-          "value": "function() { \n  console.log('should fetch.....');\n  return true; \n}"
-        }
+        "id": "graphql"
       }
     ]
   },
@@ -695,7 +693,7 @@
                       "id": "node_oclpx6dey23",
                       "props": {
                         "value": 2,
-                        "children": "选项2\n"
+                        "children": "选项2"
                       },
                       "title": "下拉选择项",
                       "hidden": false,
