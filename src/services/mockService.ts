@@ -15,11 +15,39 @@ const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypePro
 }
 
 
-export const saveSchema = async (scenarioName: string = 'unknown') => {
+export const saveSchema = async (scenarioName: string = 'unknown', preview = true) => {
   setProjectSchemaToLocalStorage(scenarioName);
   await setPackagesToLocalStorage(scenarioName);
+  if (!preview) {
+    download(scenarioName)
+  }
   Message.success('成功保存到本地');
 };
+
+function download(scenarioName: string) {
+
+  if (!scenarioName) {
+    console.error('scenarioName is required!');
+    return;
+  }
+  const text = JSON.stringify(project.exportSchema(IPublicEnumTransformStage.Save))
+  let domElement = document.createElement('a')
+
+  domElement.setAttribute('href', `data:text/plain;charset=utf-8,`+ encodeURIComponent(text))
+  domElement.setAttribute('download', scenarioName + ".json")
+  document.body.appendChild(domElement)
+
+  if(document.createEvent) {
+    let event = document.createEvent('MouseEvents')
+    event.initEvent('click', true, true)
+    domElement.dispatchEvent(event)
+  }else{
+    domElement.click()
+  }
+
+  domElement.remove()
+
+}
 
 export const resetSchema = async (scenarioName: string = 'unknown') => {
   try {
@@ -38,7 +66,6 @@ export const resetSchema = async (scenarioName: string = 'unknown') => {
     return;
   }
   const defaultSchema = generateProjectSchema(DefaultPageSchema, DefaultI18nSchema);
-
   project.importSchema(defaultSchema as any);
   project.simulatorHost?.rerender();
 

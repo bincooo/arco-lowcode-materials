@@ -30,12 +30,12 @@
       "package": "arco-lowcode-materials",
       "version": "0.1.0",
       "urls": [
-        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/render/default/view.js",
-        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/render/default/view.css"
+        "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/render/default/view.js",
+        "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/render/default/view.css"
       ],
       "editUrls": [
-        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/view.js",
-        "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/view.css"
+        "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/view.js",
+        "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/view.css"
       ],
       "library": "ArcoLowc"
     }
@@ -58,9 +58,9 @@
         "package": "arco-lowcode-materials",
         "version": "0.1.0"
       },
-      "url": "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/meta.js",
+      "url": "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/meta.js",
       "urls": {
-        "default": "http://192.168.0.3:8082/libs/arco-lowcode-materials/dist/lowcode/meta.js"
+        "default": "https://www.1micro.top/libs/arco-lowcode-materials/dist/lowcode/meta.js"
       }
     }
   ],
